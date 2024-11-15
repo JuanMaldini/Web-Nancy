@@ -1,0 +1,16 @@
+body {
+  background-color: red;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  min-height: 100vh;
+  place-items: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
