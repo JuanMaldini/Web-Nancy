@@ -1,6 +1,7 @@
 import Gallery from "./Gallery"
 import {
   Flor1A,
+  /*
   Flor1B,
   Flor2A,
   Flor2B,
@@ -8,6 +9,7 @@ import {
   Flor3B,
   Flor4A,
   Flor4B,
+  */
 } from "./ABarrelGallery";
 
 type Props = {}
