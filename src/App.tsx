@@ -1,8 +1,8 @@
 import './App.css'
 import Navbar from './Components/Navbar'
 import Description from './Components/Description';
-import ProductsArea from './Components/ProductsArea';
-import GalleryArea from './Components/GalleryArea';
+import ProductsArea from './Components/Products/ProductsArea';
+import GalleryArea from './Components/Gallery/GalleryArea';
 import Contact from './Components/Contact';
 import Faq from './Components/Faq';
 import Footer from './Components/Footer'

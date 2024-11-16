@@ -1,5 +1,14 @@
-import Gallery from "./Gallery.tsx"
-import ABarrelGallery from "./ABarrelGallery.tsx"
+import Gallery from "./Gallery"
+import {
+  Flor1A,
+  Flor1B,
+  Flor2A,
+  Flor2B,
+  Flor3A,
+  Flor3B,
+  Flor4A,
+  Flor4B,
+} from "./ABarrelGallery";
 
 type Props = {}
 
@@ -9,7 +18,7 @@ export default function ProductsArea({}: Props) {
       <div className="container">
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-          <Gallery imageG="../assets/Icons/autocad.png"/>
+          <Gallery imageG={Flor1A}/>
 
         </div>
       </div>

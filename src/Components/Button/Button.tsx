@@ -1,3 +1,5 @@
+import './Button.css'
+
 type Props = {
     destination: string,
     textButton: string,
