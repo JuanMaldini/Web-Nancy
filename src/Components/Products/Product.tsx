@@ -19,7 +19,6 @@ export default function Products({
   price,
   productPath,
 }: Props) {
-  const carouselId = `carouselExampleIndicators-${Id}`;
 
   return (
     <div className="card d-flex flex-col ">
