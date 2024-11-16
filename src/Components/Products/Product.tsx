@@ -1,7 +1,7 @@
 import Button from "../Button/Button.tsx";
 
 type Props = {
-  Id: number;
+//  Id: number;
   productName: string;
   productDescription: string;
   image1: string;
@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function Products({
-  Id,
+//  Id,
   image1,
   image2,
   productName,

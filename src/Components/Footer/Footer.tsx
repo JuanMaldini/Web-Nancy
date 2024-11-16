@@ -1,5 +1,6 @@
 import { FaInstagram } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
+import "./Footer.css";
 
 type Props = {}
 
