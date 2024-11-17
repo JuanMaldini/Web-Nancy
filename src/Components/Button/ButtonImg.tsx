@@ -1,4 +1,6 @@
-import './Button.css'
+import "./Button.css"
+import { FaWhatsapp } from "react-icons/fa";
+
 
 type Props = {
     destination: string,
@@ -8,6 +10,6 @@ type Props = {
 
 export default function Button({destination, buttonClass, textButton}: Props) {
   return (
-    <a href={destination} className={buttonClass}>{textButton}</a>
+    <a href={destination} className={buttonClass} target="_blank"> {textButton} <FaWhatsapp  /></a>
   )
 }

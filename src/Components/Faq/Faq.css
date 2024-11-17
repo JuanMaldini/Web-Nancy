@@ -1,14 +1,18 @@
 .accordion {
-    --bs-accordion-border-width: 2px;
     --bs-accordion-border-radius: 0px;
+    --bs-accordion-border-width: 0px;
     --bs-accordion-inner-border-radius: 0px;
     --bs-accordion-border-color: rgb(224, 203, 111);
-    --bs-accordion-border-width: 3px;
     --bs-accordion-active-bg: rgb(224, 203, 111);
     --bs-accordion-btn-focus-box-shadow: rgba(255, 0, 0, 0);
 }
 
 .bodyFaq {
-    background-color: red;
     margin: 0px;
+    padding: 16px;
+}
+
+.spacerArea{
+    padding: 1px;
+    background-color: rgb(224, 203, 111);
 }
