@@ -1,3 +1,4 @@
+import Spacebar from '../Spacebar/Spacebar'
 import './Faq.css'
 
 type Props = {}
@@ -12,7 +13,7 @@ export default function Faq({}: Props) {
 
       <div className="accordion" id="accordionExample">
 
-        <div className="spacerArea"></div>
+        <Spacebar/>
 
         <div className="accordion-item">
           <h2 className="accordion-header">
@@ -26,7 +27,7 @@ export default function Faq({}: Props) {
           </div>
         </div>
 
-        <div className="spacerArea"></div>
+        <Spacebar/>
 
         <div className="accordion-item">
           <h2 className="accordion-header">
@@ -41,7 +42,7 @@ export default function Faq({}: Props) {
           </div>
         </div>
 
-        <div className="spacerArea"></div>
+        <Spacebar/>
 
         <div className="accordion-item">
           <h2 className="accordion-header">

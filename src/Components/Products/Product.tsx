@@ -1,7 +1,6 @@
 import Button from "../Button/Button.tsx";
 
 type Props = {
-//  Id: number;
   productName: string;
   productDescription: string;
   image1: string;
@@ -11,7 +10,6 @@ type Props = {
 };
 
 export default function Products({
-//  Id,
   image1,
   image2,
   productName,
@@ -19,14 +17,13 @@ export default function Products({
   price,
   productPath,
 }: Props) {
-
   return (
     <div className="card d-flex flex-col ">
-      <div id="carouselExampleIndicators" className="carousel slide">
+      <div id={`carousel-${productName}`} className="carousel slide">
         <div className="carousel-indicators">
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target={`#carousel-${productName}`}
             data-bs-slide-to="0"
             className="active"
             aria-current="true"
@@ -34,7 +31,7 @@ export default function Products({
           ></button>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target={`#carousel-${productName}`}
             data-bs-slide-to="1"
             aria-label="Slide 2"
           ></button>
@@ -50,7 +47,7 @@ export default function Products({
         <button
           className="carousel-control-prev"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target={`#carousel-${productName}`}
           data-bs-slide="prev"
         >
           <span
@@ -62,7 +59,7 @@ export default function Products({
         <button
           className="carousel-control-next"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target={`#carousel-${productName}`}
           data-bs-slide="next"
         >
           <span

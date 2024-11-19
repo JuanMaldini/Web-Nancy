@@ -3,9 +3,9 @@ import "./ProductsArea.css";
 import {
   Flor1A,
   Flor1B,
-  /*
   Flor2A,
   Flor2B,
+  /*
   Flor3A,
   Flor3B,
   Flor4A,
@@ -19,13 +19,21 @@ export default function ProductsArea({}: Props) {
   return (
     <div className="productsArea">
       <div className="container">
-        <div className="d-flex flex-row align-items-center">
+        <div className="row row-cols-sm-3 row-cols-sm-3 row-cols-sm-3 g-4 my-3">
           <Product
-//            Id={1}
-            productName="Nombre de Producto"
+            productName="Nombre de Producto 1"
             productDescription="Description"
             image1={Flor1A}
             image2={Flor1B}
+            price="10.000"
+            productPath=""
+          />
+
+          <Product
+            productName="Nombre de Producto 2"
+            productDescription="Description"
+            image1={Flor2A}
+            image2={Flor2B}
             price="10.000"
             productPath=""
           />

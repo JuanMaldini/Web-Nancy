@@ -19,7 +19,7 @@ export default function ProductsArea({}: Props) {
   return (
     <div className="bodyGalleryArea">
       <div className="container">
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div className="row row-cols-sm-3 row-cols-sm-3 row-cols-sm-3 g-3 my-2">
           <Gallery imageG={Flor1A}/>
           <Gallery imageG={Flor1A}/>
           <Gallery imageG={Flor1A}/>
