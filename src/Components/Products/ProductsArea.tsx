@@ -1,19 +1,8 @@
 import Product from "./Product.tsx";
 import "./ProductsArea.css";
-import {
-  Flor1A,
-  Flor1B,
-  Flor2A,
-  Flor2B,
-  Flor3A,
-  Flor3B,
-  /*
-  Flor4A,
-  Flor4B,
-  */
-} from "./ABarrelProducts.tsx";
-import Spacebar from "../Spacebar/Spacebar.tsx";
 
+import Spacebar from "../Spacebar/Spacebar.tsx";
+import dataProducts from "./data.ts";
 
 type Props = {};
 
@@ -26,37 +15,19 @@ export default function ProductsArea({}: Props) {
         </div>
         <Spacebar />
         <div className="productsAreaProd py-2">
-
-          <Product
-            objectName="Nombre de producto 01"
-            productDescription="Description"
-            image1={Flor1A}
-            image2={Flor1B}
-            price="10.000"
-            Pdatabstoggle={"modal"}
-            Pdatabstarget={"#exampleModal"}
-          />
-
-          <Product
-            objectName="Nombre de producto 02"
-            productDescription="Description"
-            image1={Flor2A}
-            image2={Flor2B}
-            price="15.000"
-            Pdatabstoggle={"modal"}
-            Pdatabstarget={"#exampleModal"}
-          />
-
-          <Product
-            objectName="Nombre de producto 03"
-            productDescription="Description"
-            image1={Flor3A}
-            image2={Flor3B}
-            price="20.000"
-            Pdatabstoggle={"modal"}
-            Pdatabstarget={"#exampleModal"}
-          />
-
+          {dataProducts.map((item, index) => (
+            <Product
+              key={index}
+              label={item.label}
+              productDescription={item.productDescription}
+              image1={item.image1}
+              image2={item.image2}
+              price={item.price}
+              Pdatabstoggle={item.Pdatabstoggle}
+              Pdatabstarget={item.Pdatabstarget}
+              alt={item.alt}
+            />
+          ))}
         </div>
       </div>
     </div>
