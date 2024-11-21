@@ -7,7 +7,7 @@ import Corazon from "../../assets/Icons/Logo/Corazon.png";
 export default function Navbar({}: Props) {
   return (
     <nav
-      className="navbar navbar-expand-md navbar-dark d-flex flex-column"
+      className="navbarA navbar-expand-md navbar-dark d-flex flex-column"
       aria-label="Tenth navbar example"
     >
       <div>
@@ -19,12 +19,16 @@ export default function Navbar({}: Props) {
               alt="Logo Web"
               width="250"
             ></img>
-            <p className="fs-2 title">Breathe Smell Relax</p>
+            <h1 className="fs-2 titleNav1">Breathe Smell Relax</h1>
           </li>
         </ul>
       </div>
       <div className="container-fluid fs-5">
+       
         <img className="Corazon" src={Corazon} alt="Logo Web" width="30" />
+        
+        <h2 className="fs-2 titleNav2">Breathe Smell Relax</h2>
+        
         <button
           className="navbar-toggler ms-auto"
           type="button"
@@ -36,10 +40,10 @@ export default function Navbar({}: Props) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div
           className="collapse navbar-collapse justify-content-md-center"
-          id="navbarsExample08"
-        >
+          id="navbarsExample08">
           <ul className="spacerNav navbar-nav text-end">
             <li className="nav-item nav-link ">
               <a className="linkUnderline" href="#">

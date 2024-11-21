@@ -2,12 +2,12 @@
     padding: 24px;
 }
 
-.navbar {
-    background-color: rgb(255, 250, 242);
+.navbarA {
+    background-color: rgb(255, 246, 230);
     color: black;
 }
 
-.navbar a {
+.navbarA a {
     color: black;
     text-decoration: none;
 }
@@ -19,17 +19,33 @@
     position: absolute;
 }
 
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px black; /* El estilo del borde negro */
+    transition: box-shadow 0.2s ease-in-out; /* Añade una transición suave */
+}
+
+.titleNav1{
+    display: block;
+}
+.titleNav2{
+    display: none;
+}
 
 @media(max-width: 768px){
-    .title{
-
-    }
     .mainLogo{
         display: none;
     }
+    .titleNav1{
+        display: none;
+    }
+    .titleNav2{
+        display: block;
+        padding: 0px 16px;
+    }
+
     .Corazon {
         position: relative;
     }
-
 }
 

@@ -1,0 +1,10 @@
+.cardProduct{
+    display: flex;
+    flex-direction: column;
+    border-width: 1px;
+    padding: 12px;
+    margin: 0px 8px;
+    border: 2px solid rgb(199, 173, 25);
+    border-radius: 8px;
+    background-color: rgba(199, 173, 25, 0.1);
+}

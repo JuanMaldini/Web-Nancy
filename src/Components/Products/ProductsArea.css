@@ -1,4 +1,10 @@
 .productsArea {
-    background-color: rgb(255, 0, 225);
-    margin: 0px;
+    background-color: rgb(255, 246, 230);
+}
+
+.productsAreaProd{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }

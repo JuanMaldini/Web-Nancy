@@ -7,8 +7,8 @@ type Props = {}
 
 export default function Contact({}: Props) {
   return (
-    <div className="bodyContact">
-      <div className="container my-4" id="featured-3">
+    <div className="bodyContact pt-2 pb-4 m-0">
+      <div className="container" id="featured-3">
           <h2>Estemos en contacto!</h2>
           <Spacebar/>
           <div className="d-flex align-items-center g-4 py-5 row-col-2 row-col-2">

@@ -1,13 +1,28 @@
-import './Button.css'
+import "./Button.css";
 
 type Props = {
-    destination: string,
-    textButton: string,
-    buttonClass: string,
-}
+  destination: string;
+  textButton: string;
+  buttonClass: string;
+  databstoggle: string;
+  databstarget: string;
+};
 
-export default function Button({destination, buttonClass, textButton}: Props) {
+export default function Button({
+  destination,
+  buttonClass,
+  textButton,
+  databstoggle,
+  databstarget,
+}: Props) {
   return (
-    <a href={destination} className={buttonClass}>{textButton}</a>
-  )
+    <a
+      href={destination}
+      className={buttonClass}
+      data-bs-toggle={databstoggle}
+      data-bs-target={databstarget}
+    >
+      {textButton}
+    </a>
+  );
 }

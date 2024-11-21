@@ -4,8 +4,8 @@
     padding: 6px 12px;
     margin: 6px;
     border: 2px solid rgb(199, 173, 25);
-    text-decoration: none;
     border-radius: 4px;
+    text-decoration: none;
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -17,7 +17,7 @@
 .Class2 {
     background-color: lightgray;
     color: black;
-    padding: 4px 8px;
+    padding: 4px 12px;
     margin: 0px;
     border-radius: 16px;
     text-decoration: none;
