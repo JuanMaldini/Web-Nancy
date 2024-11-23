@@ -1,4 +1,5 @@
 import "./Navbar.css";
+import "../A-Helpers/Helper.css";
 
 type Props = {};
 import Logo from "../../assets/Icons/Logo/Logo01.png";
@@ -8,13 +9,11 @@ export default function Navbar({}: Props) {
   return (
     <nav
       className="navbarA navbar-expand-md navbar-dark d-flex flex-column"
-      aria-label="Tenth navbar example"
-    >
-      <div>
+      aria-label="Tenth navbar example">
+      <div className="navbarUp">
         <ul className="list-unstyled d-flex flex-column text-center">
           <li>
             <img
-              className="mainLogo"
               src={Logo}
               alt="Logo Web"
               width="250"
@@ -23,12 +22,15 @@ export default function Navbar({}: Props) {
           </li>
         </ul>
       </div>
-      <div className="container-fluid fs-5">
-       
+      <div className="containerNav container-fluid fs-5">
+
         <img className="Corazon" src={Corazon} alt="Logo Web" width="30" />
         
-        <h2 className="fs-2 titleNav2">Breathe Smell Relax</h2>
+        <div className="titleNav2">
+          <p>Breathe Smell Relax</p>
+        </div>
         
+
         <button
           className="navbar-toggler ms-auto"
           type="button"
@@ -36,11 +38,9 @@ export default function Navbar({}: Props) {
           data-bs-target="#navbarsExample08"
           aria-controls="navbarsExample08"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div
           className="collapse navbar-collapse justify-content-md-center"
           id="navbarsExample08">

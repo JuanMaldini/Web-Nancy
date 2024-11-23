@@ -14,11 +14,12 @@ export default function ProductsArea({}: Props) {
   return (
     <div className="bodyGalleryArea pt-4 pb-2 m-0">
       <div className="container">
-        <div className="text-center fs-2">
-          <p>Galería</p>
+        <div className="text-center">
+          <p className="fs-2">Galería</p>
+          <p className="fs-5">Una bella muestra de mis trabajos</p>
         </div>
         <Spacebar />
-        <div className="row row-cols-sm-3 row-cols-sm-3 row-cols-sm-3 g-3 my-2">
+        <div className="galleryArea">
           {dataGalleryImages.map((item, index) => (
             <Gallery
               key={index}

@@ -1,3 +1,9 @@
 .bodyGalleryArea {
     background-color: rgb(255, 246, 230);
 }
+
+.galleryArea{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

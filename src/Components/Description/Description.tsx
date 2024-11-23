@@ -1,26 +1,24 @@
 import "./Description.css";
-import Logo from "../../assets/Icons/Logo/Logo01.png";
-
+import "../A-Helpers/Helper.css";
+import imgCol01 from "../../assets/Fotos/Galeria/IMG-20241121-WA0037.jpg";
+import imgColumn03 from "../../assets/Fotos/Mate/IMG-20241121-WA0022.jpg";
+import descriptionBackground from "../../assets/Fotos/Galeria/IMG-20241121-WA0036.jpg";
+  
 type Props = {};
 
 export default function Description({}: Props) {
   return (
-    <div className="description m-0 p-3">
-      <div className="container">
-        <div className="descriptionCard ">
-          <div className="col-lg-7 p-4">
-            <h1 className="display-4 fw-bold lh-1 text-body-emphasis">
-              Hola a todos!
-            </h1>
-            <p className="lead">
-              Aqui pondremos una breve descripcion acerca de mi experiencia, mi
-              carrera y todos los projectos que estuve realizando
-            </p>
-          </div>
-          <div className="descriptionImage col-lg-4 offset-lg-1 overflow-hidden shadow-lg">
-            <img className="rounded-lg-3" src={Logo} alt="" width="400" />
-          </div>
-        </div>
+    <div className="description">
+      <img src={descriptionBackground} alt=""/>
+      <div className="descriptionCol01">
+        <img className="descriptionCol01Image" src={imgCol01} alt="Nancy imagen" />
+      </div>
+      <div className="descriptionCol02">
+        <p className="descriptionCol02A">Soy Nancy</p>
+        <p className="descriptionCol02B">Lorem ipsum dolor sit amet, consectetur  Duis eu purus vel tortor fermentum lacinia. Duis vel commodo nunc. Mauris dictum erat ipsum, et finibus augue volutpat in. Sed mattis ac neque porttitor consequat. In ac augue varius, ultricies quam ac, sollicitudin mauris. Sed pretium in nisl eu consectetur. Nam quis elementum augue, in auctor erat. Praesent sed eros at orci lobortis rhoncus nec id nibh. Sed ante est, iaculis ut nisl a, efficitur maximus lorem.</p>
+      </div>
+      <div className="descriptionCol03">
+        <img className="descriptionCol03Image" src={imgColumn03} alt="imagen de trabajos" />
       </div>
     </div>
   );

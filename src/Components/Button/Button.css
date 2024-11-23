@@ -3,15 +3,18 @@
     color: black;
     padding: 6px 12px;
     margin: 6px;
-    border: 2px solid rgb(199, 173, 25);
+    border: 2px solid var(--varCol03);
     border-radius: 4px;
     text-decoration: none;
-    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .Class1:hover {
-    background-color: rgb(233, 219, 152);
-    box-shadow: 0px 0px 15px rgb(185, 185, 185);
+    background-color: var(--varCol02);
+    box-shadow: 0px 0px 15px var(--varCol02);
+    border: 2px solid var(--varCol02);
+    scale: 0.98;
+    
 }
 
 .Class2 {

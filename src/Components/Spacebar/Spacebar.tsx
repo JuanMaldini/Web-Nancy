@@ -1,4 +1,5 @@
-import "./Spacebar.css"
+import "./Spacebar.css";
+import "../A-Helpers/Helper.css";
 
 type Props = {}
 

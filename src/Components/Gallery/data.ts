@@ -1,48 +1,54 @@
-import Flor1A from "../../assets/Products/Flor_01_A.jpg";
-import Flor1B from "../../assets/Products/Flor_01_B.jpg";
-import Flor2A from "../../assets/Products/Flor_02_A.jpg";
-import Flor2B from "../../assets/Products/Flor_02_B.jpg";
-import Flor3A from "../../assets/Products/Flor_03_A.jpg";
-import Flor3B from "../../assets/Products/Flor_03_B.jpg";
-import Flor4A from "../../assets/Products/Flor_04_A.jpg";
-import Flor4B from "../../assets/Products/Flor_04_B.jpg";
+import img01 from "../../assets/Fotos/Galeria/IMG-20241121-WA0011.jpg";
+import img02 from "../../assets/Fotos/Galeria/IMG-20241121-WA0014.jpg";
+import img03 from "../../assets/Fotos/Galeria/IMG-20241121-WA0018.jpg";
+import img04 from "../../assets/Fotos/Mate//IMG-20241121-WA0022.jpg";
+import img05 from "../../assets/Fotos/Galeria/IMG-20241121-WA0027.jpg";
+import img06 from "../../assets/Fotos/Galeria/IMG-20241121-WA0028.jpg";
+import img07 from "../../assets/Fotos/Galeria/IMG-20241121-WA0030.jpg";
+import img08 from "../../assets/Fotos/Galeria/IMG-20241121-WA0033.jpg";
+import img09 from "../../assets/Fotos/Galeria/IMG-20241121-WA0034.jpg";
+import img10 from "../../assets/Fotos/Galeria/IMG-20241121-WA0035.jpg";
+import img11 from "../../assets/Fotos/Galeria/IMG-20241121-WA0036.jpg";
+import img12 from "../../assets/Fotos/Galeria/IMG-20241121-WA0037.jpg";
+import img13 from "../../assets/Fotos/Galeria/IMG-20241121-WA0041.jpg";
+import img14 from "../../assets/Fotos/Galeria/IMG-20241121-WA0063.jpg";
+import img15 from "../../assets/Fotos/Galeria/IMG-20241121-WA0074.jpg";
+import img16 from "../../assets/Fotos/Galeria/IMG-20241121-WA0076.jpg";
+import img17 from "../../assets/Fotos/Galeria/IMG-20241121-WA0077.jpg";
+import img18 from "../../assets/Fotos/Galeria/IMG-20241121-WA0083.jpg";
+import img19 from "../../assets/Fotos/Galeria/IMG-20241121-WA0084.jpg";
+// iwmport vid01 from "../../assets/Fotos/Galeria/VID-20241121-WA0006.mp4";
+
 interface ImagesProps {
-  alt: string;
   src: string;
+  alt: string;
 }
 export const dataGalleryImages: ImagesProps[] = [
-  {
-    alt: "Imagen de la flor 1A",
-    src: Flor1A,
+  {src: img08, alt: "Imagen 08 de la galería"},
+  {src: img07, alt: "Imagen 07 de la galería"},
+  {src: img06, alt: "Imagen 06 de la galería"},
+  {src: img09, alt: "Imagen 09 de la galería"},
+  {src: img10, alt: "Imagen 10 de la galería"},
+  {src: img11, alt: "Imagen 11 de la galería"},
+  {src: img12, alt: "Imagen 12 de la galería"},
+  {src: img01, alt: "Imagen 01 de la galería"},
+  {src: img02, alt: "Imagen 02 de la galería"},
+  {src: img03, alt: "Imagen 03 de la galería"},
+  {src: img04, alt: "Imagen 04 de la galería"},
+  {src: img05, alt: "Imagen 05 de la galería"},
+  {src: img13, alt: "Imagen 13 de la galería"},
+  {src: img14, alt: "Imagen 14 de la galería"},
+  {src: img15, alt: "Imagen 15 de la galería"},
+  {src: img16, alt: "Imagen 16 de la galería"},
+  {src: img17, alt: "Imagen 17 de la galería"},
+  {src: img18, alt: "Imagen 18 de la galería"},
+  {src: img19, alt: "Imagen 19 de la galería",
   },
-  {
-    alt: "Imagen de la flor 1B",
-    src: Flor1B,
-  },
-  {
-    alt: "Imagen de la flor 2A",
-    src: Flor2A,
-  },
-  {
-    alt: "Imagen de la flor 2B",
-    src: Flor2B,
-  },
-  {
-    alt: "Imagen de la flor 3A",
-    src: Flor3A,
-  },
-  {
-    alt: "Imagen de la flor 3B",
-    src: Flor4A,
-  },
-  {
-    alt: "Imagen de la flor 4A",
-    src: Flor3B,
-  },
-  {
-    alt: "Imagen de la flor 4B",
-    src: Flor4B,
-  },
+  // {
+  //   src: vid01,
+  //   alt: "Video 01 de la galería",
+  // },
 ];
+
 
 export default dataGalleryImages;

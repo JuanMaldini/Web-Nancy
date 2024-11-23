@@ -1,13 +1,156 @@
-.descriptionCard {
-    display: flex;
-    flex-wrap: wrap;
+.description {
+    height: 1300px;
+    padding: 32px;
+    display: grid;
+    grid-template-areas:
+    "descriptionCol01"
+    "descriptionCol02"
+    "descriptionCol03";
+    grid-template-columns: 1fr;
+    position: relative;
     justify-content: center;
-    flex-direction: row;
     align-items: center;
-    border-radius: 24px;
-    box-shadow: 0px 0px 24px rgb(134, 134, 134);
 }
 
-.descriptionImage {
+.description > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+.descriptionCol01{
+    border-radius: 32px 32px 0px 0px;
+    grid-area: descriptionCol01;
+    background-color: var(--varCol02);
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.descriptionCol01Image {
+    width: 80%;
+    border-radius: 16px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    object-fit: cover;
+}
+
+.descriptionCol02{
+    border-radius: 0px 0px 32px 32px;
+    grid-area: descriptionCol02;
+    background-color: var(--varCol02);
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
+
+.descriptionCol02 p{
+    padding: 40px;
+}
+
+.descriptionCol02A{
+    font-size: 24px;
+}
+
+.descriptionCol02B{
+    font-size: 20px;
+}
+
+.descriptionCol03 {
+    display: none;
+    grid-area: descriptionCol03;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.descriptionCol03Image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .description{
+        height:900px;
+        grid-template-areas:
+        "descriptionCol01 descriptionCol02"
+        "descriptionCol03 descriptionCol03"
+        ;
+        grid-template-columns: 1fr 1fr;
+    }
+    .descriptionCol01{
+        border-radius: 32px 0px 0px 32px;
+    }
+    .descriptionCol02{
+        border-radius: 0px 32px 32px 0px;
+    }
+    .descriptionCol03{
+        display:none;
+    }
+}
+
+@media (min-width: 1080px) {
+    .description{
+        height: 850px;
+        grid-template-areas:
+        "descriptionCol01 descriptionCol02 descriptionCol03"
+        ;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .descriptionCol01{
+        border-radius: 32px 0px 0px 32px;
+    }
+    .descriptionCol02{
+        border-radius: 0px;
+    }
+    .descriptionCol03{
+        display:block;
+        border-radius: 0px 32px 32px 0px;
+    }
+}
+
+@media (min-width: 1440px) {
+}
+
+@media (min-width: 1920px) {
+    .description{
+        height: 900px;
+    }
+}
+
+
+
+/*
+
+EXAMPLE
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1080px) {
+}
+
+@media (min-width: 1440px) {
+}
+
+@media (min-width: 1920px) {
+}
+
+*/

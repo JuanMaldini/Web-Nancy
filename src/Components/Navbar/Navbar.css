@@ -3,7 +3,7 @@
 }
 
 .navbarA {
-    background-color: rgb(255, 246, 230);
+    background-color: var(--varCol01);
     color: black;
 }
 
@@ -12,6 +12,7 @@
     text-decoration: none;
 }
 .navbar-toggler-icon {
+    align-items: end;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='black' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
 
@@ -26,26 +27,31 @@
 }
 
 .titleNav1{
-    display: block;
+    display: ablock;
 }
+
+.containerNav{
+    display: flex;
+    align-items: center;
+}
+
 .titleNav2{
     display: none;
 }
 
 @media(max-width: 768px){
-    .mainLogo{
+    .navbarUp{
         display: none;
     }
-    .titleNav1{
-        display: none;
+    .navbarA{
+        padding: 16px 0px;
     }
-    .titleNav2{
-        display: block;
-        padding: 0px 16px;
-    }
-
     .Corazon {
         position: relative;
     }
+    .titleNav2{
+        display: block;
+    }
+
 }
 
