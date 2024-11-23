@@ -15,7 +15,7 @@ import Castillo04 from "../../assets/Fotos/Castillo 01/IMG-20241121-WA0051.jpg";
 import Castillo05 from "../../assets/Fotos/Castillo 01/IMG-20241121-WA0065.jpg";
 import Castillo06 from "../../assets/Fotos/Castillo 01/IMG-20241121-WA0066.jpg";
 
-import Colgante04_01 from "../../assets/Fotos/Colgante 04/IMG-20241121-WA0054.jpg"
+import Colgante04_01 from "../../assets/Fotos/Colgante 04/IMG-20241121-WA0054.jpg";
 
 import { ProductProps } from "./Product";
 
