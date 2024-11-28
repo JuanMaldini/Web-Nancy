@@ -1,11 +1,12 @@
 .cardProduct{
     display: flex;
     flex-direction: column;
-    align-items: start;
-    padding: 12px;
-    margin: 16px;
-    background-color: var(--varCol02);
-    max-width: 300px;
+    align-items: center;
+    align-content: space-between;
+    padding: 0px;
+    margin: 0px;
+    width: 150px;
+    height: 350px;
 }
 
 .prodcutButton{
@@ -15,12 +16,22 @@
 }
 
 .imageProduct{
-    display: block;
-    width: 200px;
+    display: flex;
+    justify-content: center;
+    max-height: 100px;
 }
 
-@media(max-width: 768px){
+@media (min-width: 768px) {
     .cardProduct{
-        max-width: 200px;
+        max-width: 300px;
     }
+}
+
+@media (min-width: 1080px) {
+}
+
+@media (min-width: 1440px) {
+}
+
+@media (min-width: 1920px) {
 }

@@ -1,11 +1,3 @@
-#root {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  padding: 0px;
-  margin: 0px auto;
-}
-
 .linkUnderline {
   text-decoration: none;
   text-underline-offset: 0;

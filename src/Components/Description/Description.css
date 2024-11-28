@@ -1,5 +1,5 @@
 .description {
-    height: 1300px;
+    height: 1150px;
     padding: 32px;
     display: grid;
     grid-template-areas:
@@ -14,8 +14,6 @@
 
 .description > img {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -32,15 +30,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .descriptionCol01Image {
-    width: 80%;
-    border-radius: 16px;
+    width: 85%;
+    border-radius: 32px;
     position: relative;
-    top: 10px;
-    left: 10px;
     object-fit: cover;
 }
 
@@ -51,15 +46,23 @@
     flex: 1;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.descriptionCol02 p{
-    padding: 40px;
+.descriptionCol02UL{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.descriptionCol02 li{
+    list-style: none;
+    padding: 16px 8px;
 }
 
 .descriptionCol02A{
+    display: flex;
+    align-items: center;
     font-size: 24px;
 }
 
@@ -88,11 +91,10 @@
 
 @media (min-width: 768px) {
     .description{
-        height:900px;
+        height:700px;
         grid-template-areas:
         "descriptionCol01 descriptionCol02"
-        "descriptionCol03 descriptionCol03"
-        ;
+        "descriptionCol03 descriptionCol03";
         grid-template-columns: 1fr 1fr;
     }
     .descriptionCol01{
@@ -108,10 +110,8 @@
 
 @media (min-width: 1080px) {
     .description{
-        height: 850px;
-        grid-template-areas:
-        "descriptionCol01 descriptionCol02 descriptionCol03"
-        ;
+        height: 750px;
+        grid-template-areas: "descriptionCol01 descriptionCol02 descriptionCol03";
         grid-template-columns: 1fr 1fr 1fr;
     }
     .descriptionCol01{

@@ -24,8 +24,6 @@ export default function ProductsArea({}: Props) {
             <Gallery
               key={index}
               imageG={item.src}
-              databstoggle={"modal"}
-              databstarget={"#exampleModal"}
               onClick={() => setSelectedImage(item.src)}
             />
           ))}

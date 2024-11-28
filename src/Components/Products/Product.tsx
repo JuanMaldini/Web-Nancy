@@ -13,9 +13,7 @@ export type ProductProps = {
   image6?: string;
   image7?: string;
   price: string;
-  Pdatabstoggle: string;
-  Pdatabstarget: string;
-  alt: string;
+  onClick: () => void;
 };
 
 export default function Products({
@@ -29,8 +27,6 @@ export default function Products({
   label,
   productDescription,
   price,
-  Pdatabstoggle,
-  Pdatabstarget,
 }: ProductProps) {
   return (
     <div className="cardProduct">
@@ -43,49 +39,42 @@ export default function Products({
             <img
               src={image1}
               className="imageProduct"
-              alt="Imagen 1 de producto"
             />
           </div>
           <div className="carousel-item">
             <img
               src={image2}
               className="imageProduct"
-              alt="Imagen 2 de producto"
             />
           </div>
           <div className="carousel-item">
             <img
               src={image3}
               className="imageProduct"
-              alt="Imagen 3 de producto"
             />
           </div>
           <div className="carousel-item">
             <img
               src={image4}
               className="imageProduct"
-              alt="Imagen 4 de producto"
             />
           </div>
           <div className="carousel-item">
             <img
               src={image5}
               className="imageProduct"
-              alt="Imagen 5 de producto"
             />
           </div>
           <div className="carousel-item">
             <img
               src={image6}
               className="imageProduct"
-              alt="Imagen 6 de producto"
             />
           </div>
           <div className="carousel-item">
             <img
               src={image7}
               className="imageProduct"
-              alt="Imagen 7 de producto"
             />
           </div>
         </div>
@@ -135,10 +124,11 @@ export default function Products({
             destination={"#"}
             buttonClass="Class1  my-2"
             textButton="Ver mas"
-            databstoggle={Pdatabstoggle}
-            databstarget={Pdatabstarget}
+            databstoggle="modal"
+            databstarget="#exampleModal"
           />
         </div>
+
       </div>
     </div>
   );

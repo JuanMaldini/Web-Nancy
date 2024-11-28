@@ -1,4 +1,5 @@
 .productsArea {
+    padding: 32px 0px;
 }
 
 .productsAreaProd{
@@ -6,4 +7,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0px;
+    margin: 16px;
 }

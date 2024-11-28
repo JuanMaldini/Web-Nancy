@@ -20,11 +20,11 @@ export default function Modal({
   // Pdatabstarget,
 }: Props) {
   return (
-    <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal fade" id="productModal" tabIndex={-1} aria-labelledby="productModalLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="exampleModalLabel">{objectName}</h5>
+            <h5 className="modal-title" id="productModalLabel">{objectName}</h5>
             
             <p className="card-text">$ {price} ARS</p>
 

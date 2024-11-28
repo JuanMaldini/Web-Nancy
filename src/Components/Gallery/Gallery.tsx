@@ -2,15 +2,11 @@ import "./Gallery.css";
 
 type Props = {
   imageG: string;
-  databstoggle: string;
-  databstarget: string;
   onClick: () => void;
 };
 
 export default function Gallery({
   imageG,
-  databstoggle,
-  databstarget,
   onClick,
 }: Props) {
   return (
@@ -19,8 +15,8 @@ export default function Gallery({
         <img
           src={imageG}
           alt="Gallery item"
-          data-bs-toggle={databstoggle}
-          data-bs-target={databstarget}
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
           onClick={onClick}
           className="gallery-image"
         />
