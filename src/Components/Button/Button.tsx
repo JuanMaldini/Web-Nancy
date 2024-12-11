@@ -2,27 +2,28 @@ import "./Button.css";
 import "../A-Helpers/Helper.css";
 
 type Props = {
-  destination: string;
+  destination?: string;
   textButton: string;
   buttonClass: string;
-  databstoggle: string;
-  databstarget: string;
+  onClick?: () => void; // Agrega la propiedad onClick
 };
 
 export default function Button({
   destination,
   buttonClass,
   textButton,
-  databstoggle,
-  databstarget,
+  onClick,
 }: Props) {
-  return (
-    <a
-      href={destination}
+  return onClick ? (
+    <button
+      type="button"
       className={buttonClass}
-      data-bs-toggle={databstoggle}
-      data-bs-target={databstarget}
+      onClick={onClick}
     >
+      {textButton}
+    </button>
+  ) : (
+    <a href={destination} className={buttonClass}>
       {textButton}
     </a>
   );

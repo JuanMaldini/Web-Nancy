@@ -89,16 +89,16 @@ export default function Products({
       </div>
 
       <div className="card-body">
-        <h5 className="card-title">{label}</h5>
+        <h5 className="card-title my-2">{label}</h5>
 
-        <div className="tagClass d-flex align-items-center justify-content-start">
+        <div className="d-flex align-items-center justify-content-start">
           <Button
             destination={""}
             buttonClass="Class2 my-2"
             textButton={productDescriptionTag} />
         </div>
 
-        <p className="priceClass card-text my-2">$ {price} ARS</p>
+        <p className="card-text my-2">$ {price} ARS</p>
 
         <div className="prodcutButton">
           <Button

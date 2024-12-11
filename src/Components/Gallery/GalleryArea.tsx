@@ -8,7 +8,7 @@ import dataGalleryImages from "./data";
 
 type Props = {};
 
-export default function ProductsArea({}: Props) {
+export default function ProductsArea({ }: Props) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
@@ -29,8 +29,8 @@ export default function ProductsArea({}: Props) {
           ))}
         </div>
       </div>
-
-      {selectedImage && <ModalGallery imageG={selectedImage} />}
+      {selectedImage &&
+        <ModalGallery imageG={selectedImage}/>}
     </div>
   );
 }

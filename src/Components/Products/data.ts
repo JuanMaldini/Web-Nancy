@@ -4,6 +4,14 @@ import Aros_01_03 from "../../assets/Fotos/Aros 01/IMG-20241121-WA0061.jpg";
 import Aros_01_04 from "../../assets/Fotos/Aros 01/IMG-20241121-WA0062.jpg";
 import Aros_01_05 from "../../assets/Fotos/Aros 01/IMG-20241121-WA0068.jpg";
 
+
+
+import Aros_02_01 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0085.jpg";
+import Aros_02_02 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0086.jpg";
+import Aros_02_03 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0087.jpg";
+import Aros_02_04 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0088.jpg";
+import Aros_02_05 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0089.jpg";
+
 import Cartera01 from "../../assets/Fotos/Cartera 01/IMG-20241121-WA0038.jpg"
 import Cartera02 from "../../assets/Fotos/Cartera 01/IMG-20241121-WA0039.jpg"
 import Cartera03 from "../../assets/Fotos/Cartera 01/IMG-20241121-WA0040.jpg"
@@ -50,151 +58,193 @@ import Sobre_01_03 from "../../assets/Fotos/Sobres/IMG-20241121-WA0055.jpg";
 import Sobre_01_04 from "../../assets/Fotos/Sobres/IMG-20241121-WA0056.jpg";
 import Sobre_01_05 from "../../assets/Fotos/Sobres/IMG-20241121-WA0057.jpg";
 
-import Aros_02_01 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0085.jpg";
-import Aros_02_02 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0086.jpg";
-import Aros_02_03 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0087.jpg";
-import Aros_02_04 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0088.jpg";
-import Aros_02_05 from "../../assets/Fotos/Aros 02/IMG-20241121-WA0089.jpg";
+
 
 import { ProductProps } from "./Product";
 
 export const dataProducts: ProductProps[] = [
-
   {
+    label: "Aros 01",
+    productDescriptionGeneral: "Descripción general de Aros 01",
+    productDescriptionTag: "Descripción breve de Aros 01",
     image1: Aros_01_01,
     image2: Aros_01_02,
     image3: Aros_01_03,
     image4: Aros_01_04,
     image5: Aros_01_05,
-    label: "Arcos 01",
+    image6: undefined,
+    image7: undefined,
     price: "10.000",
-    productDescription: "Description 1",
   },
-
   {
+    label: "Aros 02",
+    productDescriptionGeneral: "Descripción general de Aros 02",
+    productDescriptionTag: "Descripción breve de Aros 02",
     image1: Aros_02_01,
     image2: Aros_02_02,
     image3: Aros_02_03,
     image4: Aros_02_04,
     image5: Aros_02_05,
-    label: "Arcos 02",
-    price: "10.000",
-    productDescription: "Description 1",
+    image6: undefined,
+    image7: undefined,
+    price: "12.000",
   },
-
   {
+    label: "Cartera 01",
+    productDescriptionGeneral: "Descripción general de Cartera 01",
+    productDescriptionTag: "Descripción breve de Cartera 01",
     image1: Cartera01,
     image2: Cartera02,
     image3: Cartera03,
-    label: "Cartera",
+    image4: undefined,
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
     price: "15.000",
-    productDescription: "Description 2",
   },
-
   {
+    label: "Castillo 01",
+    productDescriptionGeneral: "Descripción general de Castillo 01",
+    productDescriptionTag: "Descripción breve de Castillo 01",
     image1: Castillo01,
     image2: Castillo02,
     image3: Castillo03,
     image4: Castillo04,
     image5: Castillo05,
     image6: Castillo06,
-    label: "Castillo",
-    price: "15.000",
-    productDescription: "Castillo de tela",
+    image7: undefined,
+    price: "25.000",
   },
-
   {
+    label: "Colgante 01",
+    productDescriptionGeneral: "Descripción general de Colgante 01",
+    productDescriptionTag: "Descripción breve de Colgante 01",
     image1: Colgante01_01,
     image2: Colgante01_02,
-    label: "Colgante 01",
-    price: "15.000",
-    productDescription: "Colgante 01 de tela",
+    image3: undefined,
+    image4: undefined,
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
+    price: "8.000",
   },
-
   {
-    image1: Colgante02_01,
     label: "Colgante 02",
-    price: "15.000",
-    productDescription: "Colgante 02 de tela",
+    productDescriptionGeneral: "Descripción general de Colgante 02",
+    productDescriptionTag: "Descripción breve de Colgante 02",
+    image1: Colgante02_01,
+    image2: undefined,
+    image3: undefined,
+    image4: undefined,
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
+    price: "7.500",
   },
-
   {
+    label: "Colgante 03",
+    productDescriptionGeneral: "Descripción general de Colgante 03",
+    productDescriptionTag: "Descripción breve de Colgante 03",
     image1: Colgante03_01,
     image2: Colgante03_02,
-    label: "Colgante 03",
-    price: "15.000",
-    productDescription: "Colgante 03 de tela",
+    image3: undefined,
+    image4: undefined,
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
+    price: "9.000",
   },
-
   {
-    image1: Colgante04_01,
     label: "Colgante 04",
-    price: "15.000",
-    productDescription: "Colgante 04 de tela",
-  },
-  
-  {
+    productDescriptionGeneral: "Descripción general de Colgante 04",
+    productDescriptionTag: "Descripción breve de Colgante 04",
     image1: Colgante04_01,
-    label: "Colgante 04",
-    price: "15.000",
-    productDescription: "Colgante 04 de tela",
+    image2: undefined,
+    image3: undefined,
+    image4: undefined,
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
+    price: "10.000",
   },
-
   {
+    label: "Cubertor 01",
+    productDescriptionGeneral: "Descripción general de Cubertor 01",
+    productDescriptionTag: "Descripción breve de Cubertor 01",
     image1: Cubertor_01_01,
     image2: Cubertor_01_02,
-    label: "Cubertor 01",
-    price: "15.000",
-    productDescription: "Cubertor 01 de tela",
+    image3: undefined,
+    image4: undefined,
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
+    price: "18.000",
   },
-
   {
+    label: "Espejo 01",
+    productDescriptionGeneral: "Descripción general de Espejo 01",
+    productDescriptionTag: "Descripción breve de Espejo 01",
     image1: Espejo_01_01,
     image2: Espejo_01_02,
     image3: Espejo_01_03,
     image4: Espejo_01_04,
-    label: "Espejo 01",
-    price: "15.000",
-    productDescription: "Espejo 01 de tela",
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
+    price: "20.000",
   },
-
   {
+    label: "Figura 01",
+    productDescriptionGeneral: "Descripción general de Figura 01",
+    productDescriptionTag: "Descripción breve de Figura 01",
     image1: Figura_01_01,
     image2: Figura_01_02,
     image3: Figura_01_03,
-    label: "Figura 01",
-    price: "15.000",
-    productDescription: "Figura 01 de tela",
+    image4: undefined,
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
+    price: "12.500",
   },
-
   {
+    label: "Figura 02",
+    productDescriptionGeneral: "Descripción general de Figura 02",
+    productDescriptionTag: "Descripción breve de Figura 02",
     image1: Figura_02_01,
     image2: Figura_02_02,
     image3: Figura_02_03,
-    label: "Figura 02",
-    price: "15.000",
-    productDescription: "Figura 02 de tela",
+    image4: undefined,
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
+    price: "13.000",
   },
-
   {
+    label: "Mate 01",
+    productDescriptionGeneral: "Descripción general de Mate 01",
+    productDescriptionTag: "Descripción breve de Mate 01",
     image1: Mate_01_01,
     image2: Mate_01_02,
-    label: "Figura 02",
-    price: "15.000",
-    productDescription: "Mate 01",
+    image3: undefined,
+    image4: undefined,
+    image5: undefined,
+    image6: undefined,
+    image7: undefined,
+    price: "6.000",
   },
-
   {
+    label: "Sobre 01",
+    productDescriptionGeneral: "Descripción general de Sobre 01",
+    productDescriptionTag: "Descripción breve de Sobre 01",
     image1: Sobre_01_01,
     image2: Sobre_01_02,
     image3: Sobre_01_03,
     image4: Sobre_01_04,
     image5: Sobre_01_05,
-    label: "Sobres",
-    price: "15.000",
-    productDescription: "Sobres de tela",
+    image6: undefined,
+    image7: undefined,
+    price: "4.500",
   },
-
 ];
 
 export default dataProducts;
