@@ -1,12 +1,12 @@
 .productsArea {
-    padding: 32px 0px;
+    padding: 0px;
+    margin: 16px;
 }
 
 .productsAreaProd{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 0px;
-    margin: 16px;
+    align-items: end;
+    padding: 32px 0px;
 }
