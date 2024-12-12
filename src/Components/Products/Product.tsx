@@ -88,28 +88,35 @@ export default function Products({
         </button>
       </div>
 
-      <div className="card-body">
-        <h5 className="card-title">{label}</h5>
+      <a
+        className="card-body-a"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+          
+        <div className="card-body">
+          <h5 className="card-title linkUnderline">{label}</h5>
 
-        <div className="tagClass d-flex align-items-center justify-content-start">
-          <Button
-            destination={""}
-            buttonClass="Class2 my-2"
-            textButton={productDescriptionTag} />
+          <div className="tagClass d-flex align-items-center justify-content-start">
+            <Button
+              destination={""}
+              buttonClass="Class2"
+              textButton={productDescriptionTag} />
+          </div>
+
+          <p className="priceClass">$ {price} ARS</p>
+
+          <div className="prodcutButton">
+            <Button
+              textButton="Ver más"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              onClick={onClick}
+              buttonClass="Class1 productButton"
+            />
+          </div>
         </div>
+      </a>
 
-        <p className="priceClass card-text my-2">$ {price} ARS</p>
-
-        <div className="prodcutButton">
-          <Button
-            textButton="Ver más"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-            onClick={onClick}
-            buttonClass="Class1 my-2"
-          />
-        </div>
-      </div>
     </div>
   );
 }

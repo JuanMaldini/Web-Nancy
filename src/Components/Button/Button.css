@@ -2,25 +2,23 @@
     background-color: rgba(255, 255, 255, 0);
     color: black;
     padding: 6px 12px;
-    margin: 6px;
     border: 2px solid var(--varCol02);
     border-radius: 4px;
     text-decoration: none;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .Class1:hover {
-    box-shadow: 0px 0px 8px var(--varCol02);
-    border: 2px solid var(--varCol02);
-    scale: 0.98;
+    box-shadow: 0px 0px 7px var(--varCol02);
+    border: 2px solid rgba(255, 0, 0, 0);
+    scale: 0.95;
     cursor: pointer;
 }
 
 .Class2 {
-    background-color: lightgray;
     color: black;
-    padding: 4px 12px;
-    margin: 0px;
-    border-radius: 8px;
+    border-radius: 12px;
     text-decoration: none;
+    padding: 4px 8px;
+    border: 1px solid var(--varCol02);
 }
