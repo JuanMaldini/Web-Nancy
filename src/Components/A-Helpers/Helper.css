@@ -4,6 +4,9 @@
     --varCol03: #D76C4C; /* Rojo */
     --varCol04: #D3AF5F; /* Dorado claro */
     --varCol05: #A37718; /* Dorado oscuro */
+
+    --varColWhite: rgb(235, 235, 235);
+    --varColWhiteH: blue;
   }
   
 

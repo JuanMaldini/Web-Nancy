@@ -2,6 +2,7 @@ import "./Contact.css";
 import Button from "../Button/ButtonImg.tsx";
 import Spacebar from "../Spacebar/Spacebar.tsx";
 import ContactImg from "../../assets/Icons/Logo/Logo01.png";
+import { getWhatsappContact } from "../A-Helpers/Helper.tsx";
 
 type Props = {}
 
@@ -20,7 +21,7 @@ export default function Contact({}: Props) {
             <div className="feature col">
                 <h3 className="fs-2 text-body-emphasis">Featured title</h3>
                 <p>Un texto para llamar la atencion de los clientes, ofrecerles algunos servicios, asistencia, comentarios o difrentes propuestas</p>
-                <Button destination="http://wa.me/5491135578288" buttonClass="Class1" textButton="Whatsapp"/>
+                <Button destination={getWhatsappContact()} buttonClass="Class1" textButton="Whatsapp"/>
             </div>
           </div>
       </div>

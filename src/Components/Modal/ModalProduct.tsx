@@ -1,9 +1,8 @@
 import { useState } from "react";
-import "../Button/Button.css";
-
 import { FaWhatsapp } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-
+import Button from "../Button/Button";
+import { getWhatsappTemplate } from "../A-Helpers/Helper";
 
 type Props = {
   label: string;
@@ -17,7 +16,6 @@ type Props = {
   image6?: string;
   image7?: string;
   price: string;
-  onClick?: () => void;
 };
 
 function ModalProduct({
@@ -35,50 +33,34 @@ function ModalProduct({
 }: Props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = [image1, image2, image3, image4, image5, image6, image7].filter(Boolean);
-
-  const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % images.length);
-  const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-
-  const WelcomeText = `Hola, me gustaría más información sobre el ${label}.`;
-  const WelcomeTextF = encodeURIComponent(WelcomeText);
+  const images = [
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+  ].filter(Boolean);
 
   return (
-    <div
-      className="modal fade"
-      id="exampleModal"
-      tabIndex={-1}
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div className="modal-dialog" role="document">
-        <div className="modal-content">
-
-          <div className="modal-header">
-            <h5 className="modal-title">{label}</h5>
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          </div>
-
-          {images.length > 0 && (
-            <div className="custom-carousel">
-              <button className="custom-carousel-btn custom-carousel-prev" onClick={prevImage}>‹</button>
-              <img src={images[currentImageIndex]} alt={`Product image ${currentImageIndex + 1}`} className="custom-carousel-image" />
-              <button className="custom-carousel-btn custom-carousel-next" onClick={nextImage}>›</button>
-            </div>
-          )}
-          
-          <div className="modal-body">
-            <p className="modal-tagline">{productDescriptionTag}</p>
-            <p className="modal-description">{productDescriptionGeneral}</p>
-            <p className="modal-price">${price} ARS</p>
-          </div>
-
-          <div className="modal-footer">
-            <a className="whatsappIcon" href={`http://wa.me/5491135578288?text=${WelcomeTextF}`} target="_blank"><FaWhatsapp style={{ color: '#25D366' }} /></a>
-            <button type="button" className="Class1" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
+<div className="modal fade" id={`modal-${label.replace(/\s+/g, "")}`} tabIndex={-1} aria-labelledby="modalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title">Modal title</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-primary">Save changes</button>
       </div>
     </div>
+  </div>
+</div>
   );
 }
 

@@ -31,7 +31,7 @@ export default function ProductsArea({ }: Props) {
         <p className="fs-5">Para que los puedas tener todos en tu hogar</p>
       </div>
       <Spacebar />
-      <div className="productsAreaProd">
+      <div className="productsAreaProd" >
         {dataProducts.map((item, index) => (
           <Product
             key={index}

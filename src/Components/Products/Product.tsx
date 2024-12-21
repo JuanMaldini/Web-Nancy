@@ -1,7 +1,8 @@
 import Button from "../Button/Button.tsx";
 import "./Product.css";
 import "../A-Helpers/Helper.css";
-import { useState } from "react";
+import { getWhatsappTemplate } from "../A-Helpers/Helper.tsx";
+import { FaWhatsapp } from "react-icons/fa";
 
 export type ProductProps = {
   label: string;
@@ -18,7 +19,10 @@ export type ProductProps = {
   onClick: () => void;
 };
 
-export default function Products({
+export default function Product({
+  label,
+  productDescriptionTag,
+  productDescriptionGeneral,
   image1,
   image2,
   image3,
@@ -26,97 +30,103 @@ export default function Products({
   image5,
   image6,
   image7,
-  label,
-  productDescriptionTag,
-  productDescriptionGeneral,
   price,
   onClick,
 }: ProductProps) {
-  const images = [image1, image2, image3, image4, image5, image6, image7];
-
-  const validImages = images
-    .map((img, index) => img ? { img, index } : null)
-    .filter((image) => image !== null) as { img: string, index: number }[];
-
-  const [activeImageIndex, setActiveImageIndex] = useState(validImages.length > 0 ? validImages[0].index : -1);
-
-  const changeImage = (index: number) => {
-    const validImage = validImages.find(image => image.index === index);
-    if (validImage) {
-      setActiveImageIndex(validImage.index);
-    }
-  };
-
-  const nextImage = () => {
-    const currentIndex = validImages.findIndex((item) => item.index === activeImageIndex);
-    if (currentIndex < validImages.length - 1) {
-      setActiveImageIndex(validImages[currentIndex + 1].index);
-    }
-  };
-
-  const prevImage = () => {
-    const currentIndex = validImages.findIndex((item) => item.index === activeImageIndex);
-    if (currentIndex > 0) {
-      setActiveImageIndex(validImages[currentIndex - 1].index);
-    }
-  };
+  const images = [
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+  ].filter((img) => img && img.trim() !== "");
 
   return (
-    <div className="cardProduct">
-      <div id={`carouselExample-${label.replace(/ /g, "_")}`} className="carousel slide">
-        <div className="carousel-inner">{validImages.map((image) => (
-          <div className={`carousel-item ${activeImageIndex === image.index ? "active" : ""}`} key={image.index}>
-            <img src={image.img} className="imageProduct" alt={`Product image ${image.index + 1}`} />
-          </div>))}
+    <div
+      className="cardProduct" 
+      data-bs-toggle="modal"
+      data-bs-target={`#modal-${label.replace(/\s+/g, "")}`}
+    >
+      <div
+        id={`carouselExample-${label.replace(/\s+/g, "")}`}
+        className="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-inner">
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className={`carousel-item ${index === 0 ? "active" : ""}`}
+            >
+              <img
+                src={img}
+                className="carousel-img"
+                alt={`Image ${index + 1}`}
+              />
+            </div>
+          ))}
         </div>
 
         <button
           className="carousel-control-prev"
           type="button"
-          onClick={prevImage}
-          disabled={activeImageIndex === validImages[0].index}>
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          data-bs-target={`#carouselExample-${label.replace(/\s+/g, "")}`}
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
           className="carousel-control-next"
           type="button"
-          onClick={nextImage}
-          disabled={activeImageIndex === validImages[validImages.length - 1].index}>
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          data-bs-target={`#carouselExample-${label.replace(/\s+/g, "")}`}
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>
 
-      <a
-        className="card-body-a"
+      <button
+        className="card-body"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal">
-          
-        <div className="card-body">
-          <h5 className="card-title linkUnderline">{label}</h5>
-
-          <div className="tagClass d-flex align-items-center justify-content-start">
-            <Button
-              destination={""}
-              buttonClass="Class2"
-              textButton={productDescriptionTag} />
-          </div>
-
-          <p className="priceClass">$ {price} ARS</p>
-
-          <div className="prodcutButton">
-            <Button
-              textButton="Ver más"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              onClick={onClick}
-              buttonClass="Class1 productButton"
-            />
-          </div>
+        data-bs-target={`#carouselExample-${label.replace(/\s+/g, "")}`}
+      >
+        <div>
+          <p className="card-title">{label}</p>
         </div>
-      </a>
+        <div className="tagClass">
+          <div className="Class2">{productDescriptionTag}</div>
+        </div>
+        <div className="priceClass">
+          <p>$ {price} ARS</p>
+        </div>
+      </button>
 
+      <div className="cardlinks">
+        <Button
+          textButton="Ver más"
+          data-bs-toggle="modal"
+          data-bs-target={`#carouselExample-${label.replace(/\s+/g, "")}`}
+          onClick={onClick}
+          buttonClass="Class1 productButton"
+        />
+        <a
+          className="whatsappIcon"
+          href={getWhatsappTemplate(label)}
+          target="_blank"
+        >
+          <FaWhatsapp style={{ color: "#25D366" }} />
+        </a>
+      </div>
     </div>
   );
 }

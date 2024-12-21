@@ -9,16 +9,19 @@
 }
 
 .Class1:hover {
-    box-shadow: 0px 0px 7px var(--varCol02);
-    border: 2px solid rgba(255, 0, 0, 0);
-    scale: 0.95;
     cursor: pointer;
+    background-color: rgba(196, 178, 145, 0.219);
 }
 
 .Class2 {
+    background-color: rgba(255, 255, 255, 0);
     color: black;
+    border: 2px solid var(--varCol02);
     border-radius: 12px;
     text-decoration: none;
     padding: 4px 8px;
-    border: 1px solid var(--varCol02);
+    cursor: auto;
+}
+.Class2:hover {
+    cursor: auto;
 }

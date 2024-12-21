@@ -24,9 +24,6 @@ function ModalGallery({ imageG }: Props) {
           <div className="modal-body">
             <img src={imageG} alt="Selected item" className="img-fluid" />
           </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" ata-bs-dismiss="modal"> Close </button>
-          </div>
         </div>
       </div>
     </div>

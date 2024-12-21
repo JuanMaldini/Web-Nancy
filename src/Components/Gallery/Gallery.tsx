@@ -1,4 +1,5 @@
 import "./Gallery.css";
+import "../A-Helpers/Helper.css";
 
 type Props = {
   imageG: string;
@@ -10,7 +11,7 @@ export default function Gallery({
   onClick,
 }: Props) {
   return (
-    <div>
+
       <div className="card">
         <img
           src={imageG}
@@ -21,6 +22,6 @@ export default function Gallery({
           className="gallery-image"
         />
       </div>
-    </div>
+
   );
 }

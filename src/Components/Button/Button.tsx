@@ -1,20 +1,30 @@
 import "./Button.css";
 import "../A-Helpers/Helper.css";
 
-type Props = {
-  destination?: string;
+export type ButtonProps = {
   textButton: string;
-  buttonClass: string;
-  onClick?: () => void; // Agrega la propiedad onClick
+  buttonClass?: string;
+  onClick?: () => void;
+  destination?: string; // URL si es un enlace
+  target?: "_blank" | "_self";
 };
 
 export default function Button({
-  destination,
-  buttonClass,
   textButton,
+  buttonClass = "",
   onClick,
-}: Props) {
-  return onClick ? (
+  destination,
+  target = "_self",
+}: ButtonProps) {
+  return destination ? (
+    <a
+      href={destination}
+      className={buttonClass}
+      target={target}
+    >
+      {textButton}
+    </a>
+  ) : (
     <button
       type="button"
       className={buttonClass}
@@ -22,9 +32,5 @@ export default function Button({
     >
       {textButton}
     </button>
-  ) : (
-    <a href={destination} className={buttonClass}>
-      {textButton}
-    </a>
   );
 }
