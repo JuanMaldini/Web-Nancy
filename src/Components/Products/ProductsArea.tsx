@@ -13,7 +13,7 @@ export default function ProductsArea({ }: Props) {
   const [selectedProduct, setSelectedProduct] = useState<{
     label: string;
     productDescriptionTag: string;
-    productDescriptionGeneral: string;
+    productDescriptionGeneral?: string;
     image1: string;
     image2?: string;
     image3?: string;

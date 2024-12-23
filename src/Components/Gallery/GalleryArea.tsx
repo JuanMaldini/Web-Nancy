@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Gallery from "./Gallery";
 import "./GalleryArea.css";
+import "../A-Helpers/Helper.css";
 
 import Spacebar from "../Spacebar/Spacebar";
 import ModalGallery from "../Modal/ModalGallery";
@@ -12,8 +13,7 @@ export default function ProductsArea({ }: Props) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <div className="bodyGalleryArea pt-4 pb-2 m-0">
-      <div className="container">
+    <div className="bodyGalleryArea">
         <div className="text-center">
           <p className="fs-2">Galería</p>
           <p className="fs-5">Una bella muestra de mis trabajos</p>
@@ -28,7 +28,6 @@ export default function ProductsArea({ }: Props) {
             />
           ))}
         </div>
-      </div>
       {selectedImage &&
         <ModalGallery imageG={selectedImage}/>}
     </div>

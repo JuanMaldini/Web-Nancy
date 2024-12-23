@@ -1,22 +1,25 @@
 :root {
-    --varCol01: #FFFFFF; /* Blanco */
-    --varCol02: #FFB7A1; /* Rosa claro */
-    --varCol03: #D76C4C; /* Rojo */
-    --varCol04: #D3AF5F; /* Dorado claro */
-    --varCol05: #A37718; /* Dorado oscuro */
+  --varCol01: #ffffff; /* Blanco */
+  --varCol02: #ffb7a1; /* Rosa claro */
+  --varCol02-B: #ffe5de; /* Rosa claro */
+  --varCol03: #d76c4c; /* Rojo */
+  --varCol04: #d3af5f; /* Dorado claro */
+  --varCol05: #a37718; /* Dorado oscuro */
 
-    --varColWhite: rgb(235, 235, 235);
-    --varColWhiteH: blue;
-  }
-  
+  --varColWhite: rgb(235, 235, 235);
+  --varColWhiteH: rgb(225, 225, 225);
+  --varColWhite3: rgb(250, 250, 250);
 
-  @media (max-width: 390px) {
-  }
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 1080px) {
-  }  
-  @media (max-width: 1440px) {
-  }
-  @media (max-width: 1920px) {
-  }
+  --varColBlack: rgb(150, 150, 150);
+}
+
+@media (max-width: 390px) {
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 1080px) {
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1920px) {
+}

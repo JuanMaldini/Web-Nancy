@@ -1,3 +1,24 @@
+.bodyContactSection{
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--varColWhite3);
+    padding: 32px;/
+}
+
 .bodyContact {
-    background-color: rgb(255, 246, 230);
+    padding: 16px 32px;
+    border-radius: 32px;
+    background-color: var(--varColWhite3);
+    box-shadow: 0px 0px 16px var(--varColWhiteH);
+}
+
+.contacdtImg{
+    display: flex;
+    justify-content: end;
+}
+
+.bodyContactItem{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

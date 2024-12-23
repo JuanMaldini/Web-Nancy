@@ -1,5 +1,5 @@
 
-export const getWhatsappTemplate = (label: string) => {
+export const getWhatsappContactProduct = (label: string) => {
   const Celular = "5491135578288";
   const WelcomeText = `Hola Nancy, un gusto. Estaba revisando su web y me gustaría más información sobre el producto que se llama "${label}", Gracias!.`;
   const WelcomeTextF = encodeURIComponent(WelcomeText);
@@ -14,3 +14,7 @@ export const getWhatsappContact = () => {
 
   return `http://wa.me/${Celular}?text=${ContactTextF}`;
 }
+
+export const InstagramLink = "https://www.instagram.com/breathesmellrelax";
+export const EmailLink = "";
+// export const EmailLink = "mailto:juan.maldini@outlook.com"

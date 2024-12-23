@@ -6,22 +6,15 @@ type Props = {
   onClick: () => void;
 };
 
-export default function Gallery({
-  imageG,
-  onClick,
-}: Props) {
+export default function Gallery({ imageG, onClick }: Props) {
   return (
-
-      <div className="card">
-        <img
-          src={imageG}
-          alt="Gallery item"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          onClick={onClick}
-          className="gallery-image"
-        />
-      </div>
-
+    <img 
+        src={imageG}
+        alt="Gallery item"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        onClick={onClick}
+        className="card"
+      />
   );
 }

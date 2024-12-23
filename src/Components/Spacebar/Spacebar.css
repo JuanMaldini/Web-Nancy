@@ -1,6 +1,5 @@
 .spacerArea{
     padding: 1px;
-    background-color: var(--varCol03);
-    margin: 4px 32px;
-    width: 100%;
+    background-color: var(--varCol02);
+    width: 50%;
 }
