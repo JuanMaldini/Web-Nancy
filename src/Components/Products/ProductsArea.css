@@ -1,6 +1,6 @@
 .productsArea {
     background-color: var(--varColWhite3);
-    padding: 20px 0px;
+    padding: 20px 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;

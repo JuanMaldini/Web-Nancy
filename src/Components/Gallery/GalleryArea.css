@@ -1,15 +1,17 @@
 .bodyGalleryArea {
     background-color: var(--varCol02-B);
-    padding: 20px 0px;
+    padding: 20px 16px;
+    margin: 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0px 16px;
 }
 
 .galleryArea{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 16px;
     justify-content: center;
-    justify-items: center;
 }

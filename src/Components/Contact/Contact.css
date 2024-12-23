@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     background-color: var(--varColWhite3);
-    padding: 32px;/
+    padding: 32px 16px;
 }
 
 .bodyContact {
@@ -12,7 +12,7 @@
     box-shadow: 0px 0px 16px var(--varColWhiteH);
 }
 
-.contacdtImg{
+.contactImg{
     display: flex;
     justify-content: end;
 }
@@ -21,4 +21,6 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }

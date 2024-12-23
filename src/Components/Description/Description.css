@@ -1,8 +1,9 @@
 .descriptionBG{
-    /* background-color: var(--varColWhite3); */
+    margin: 32px 0px;
 }
 
 .description {
+    /* backgrosund-color: var(--varColWhite3); */
     
     height: 1150px;
     padding: 32px;
@@ -24,14 +25,14 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: blur(25px);
+    filter: blur(16px);
 }
 
 .descriptionCol01{
     
     border-radius: 32px 32px 0px 0px;
     grid-area: descriptionCol01;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--varColWhiteTrans);
     flex: 1;
     height: 100%;
     display: flex;
@@ -49,7 +50,7 @@
 .descriptionCol02{
     border-radius: 0px 0px 32px 32px;
     grid-area: descriptionCol02;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--varColWhiteTrans);
     flex: 1;
     height: 100%;
     display: flex;

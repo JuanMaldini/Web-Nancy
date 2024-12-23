@@ -21,26 +21,10 @@ export type ProductProps = {
 export default function Product({
   label,
   productDescriptionTag,
-  // productDescriptionGeneral,
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  price,
-  // onClick,
-}: ProductProps) {
-  const images = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-  ].filter((img) => img && img.trim() !== "");
+  // productDescriptionGeneral, onClick,
+  image1, image2, image3, image4, image5, image6, image7, price,}: ProductProps) {
+
+    const images = [ image1, image2, image3, image4, image5, image6, image7 ].filter((img) => img && img.trim() !== "");
 
   return (
     <>
@@ -80,13 +64,13 @@ export default function Product({
         </div>
 
         <div className="priceClass">
-          <p className="m-0">$ {price} ARS</p>
+          <p className="m-0">$ {price} wwARS</p>
         </div>
       </div>
 
       <div className="cardlinks">
         <div data-bs-toggle="modal" data-bs-target="#exampleModal" className="Class1 productButton">Ver más</div>
-        <a className="whatsappIcon" href={getWhatsappContactProduct(label)} target="_blank"><FaWhatsapp style={{ color: "#25D366" }} /></a>
+        <a className="whatsappIcon" href={getWhatsappContactProduct(label)} target="_blank"><FaWhatsapp className="" style={{ color: "#25D366" }} /></a>
       </div>
 
       </div>

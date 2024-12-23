@@ -11,6 +11,10 @@
   --varColWhite3: rgb(250, 250, 250);
 
   --varColBlack: rgb(150, 150, 150);
+
+  --varColWhiteTrans: rgba(255, 255, 255, 0.5);
+
+  --varWSPSize: 32px;
 }
 
 @media (max-width: 390px) {
