@@ -6,7 +6,7 @@ type Props = {};
 
 export default function Faq({}: Props) {
   return (
-    <div className="bodyFaq">
+    <div id="Faq" className="bodyFaq">
       <div className="text-center fs-1">
         <p>Preguntas Frecuentes</p>
       </div>

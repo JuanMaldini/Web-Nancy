@@ -22,15 +22,15 @@ export default function Footer({}: Props) {
 
             <ul className="nav d-flex flex-column col-2 justify-content-start">
               <li className="fs-7 fst-italic nav-item-title">LINKS</li>
-              <li className="nav-item"><a href="#" className="linkUnderline">Inicio</a></li>
-              <li className="nav-item"><a href="#" className="linkUnderline">Productos</a></li>
-              <li className="nav-item"><a href="#" className="linkUnderline">Galería</a></li>
-              <li className="nav-item"><a href="#" className="linkUnderline">Contacto</a></li>
+              <li className="nav-item"><a href="#Navbar" className="linkUnderline">Inicio</a></li>
+              <li className="nav-item"><a href="#ProductsArea" className="linkUnderline">Productos</a></li>
+              <li className="nav-item"><a href="#GalleryArea" className="linkUnderline">Galería</a></li>
+              <li className="nav-item"><a href="#Contact" className="linkUnderline">Contacto</a></li>
             </ul>
 
             <ul className="nav d-flex flex-column col-2 justify-content-start">
               <li className="fs-7 fst-italic nav-item-title">AYUDA</li>
-              <li className="nav-item"><a href="#" className="linkUnderline">FAQs</a></li>
+              <li className="nav-item"><a href="#Faq" className="linkUnderline">FAQs</a></li>
             </ul>
 
             <ul className="nav d-flex flex-column col-3 justify-content-start align-items-start ">

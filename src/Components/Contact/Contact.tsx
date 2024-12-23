@@ -9,7 +9,7 @@ type Props = {}
 
 export default function Contact({}: Props) {
   return (
-    <div className="bodyContactSection">
+    <div id="Contact" className="bodyContactSection">
       <div className="bodyContact">
             <h2>Estemos en contacto!</h2>
             <Spacebar/>

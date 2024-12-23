@@ -25,7 +25,7 @@ export default function ProductsArea({ }: Props) {
   } | null>(null);
 
   return (
-    <div className="productsArea">
+    <div id="ProductsArea" className="productsArea">
       <div className="text-center">
         <p className="fs-2">Productos</p>
         <p className="fs-5">Para que los puedas tener todos en tu hogar</p>
