@@ -19,29 +19,29 @@ type Props = {
 };
 
 function ModalProduct({
-  label,
-  productDescriptionTag,
-  productDescriptionGeneral,
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  price,
+  // label,
+  // productDescriptionTag,
+  // productDescriptionGeneral,
+  // image1,
+  // image2,
+  // image3,
+  // image4,
+  // image5,
+  // image6,
+  // image7,
+  // price,
 }: Props) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-  ].filter(Boolean);
+  // const images = [
+  //   image1,
+  //   image2,
+  //   image3,
+  //   image4,
+  //   image5,
+  //   image6,
+  //   image7,
+  // ].filter(Boolean);
 
   return (
 <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">

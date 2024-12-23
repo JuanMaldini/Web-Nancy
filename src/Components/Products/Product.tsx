@@ -1,4 +1,3 @@
-import Button from "../Button/Button.tsx";
 import "./Product.css";
 import "../A-Helpers/Helper.css";
 import { getWhatsappContactProduct } from "../A-Helpers/Helper.tsx";
@@ -22,7 +21,7 @@ export type ProductProps = {
 export default function Product({
   label,
   productDescriptionTag,
-  productDescriptionGeneral,
+  // productDescriptionGeneral,
   image1,
   image2,
   image3,
@@ -31,7 +30,7 @@ export default function Product({
   image6,
   image7,
   price,
-  onClick,
+  // onClick,
 }: ProductProps) {
   const images = [
     image1,
