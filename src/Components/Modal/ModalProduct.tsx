@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
-import Button from "../Button/Button";
-import { getWhatsappTemplate } from "../A-Helpers/Helper";
+// import { useState } from "react";
+// import { FaWhatsapp } from "react-icons/fa";
+// import { IoClose } from "react-icons/io5";
+// import Button from "../Button/Button";
+// import { getWhatsappContactProduct } from "../A-Helpers/Helper";
 
 type Props = {
   label: string;
