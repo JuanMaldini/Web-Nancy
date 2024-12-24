@@ -2,11 +2,9 @@ Footer {
     background-color: var(--varColWhite3);
     margin: 0px;
     padding: 16px;
-
     border-radius: 24px 32px 0px 0px;
     box-shadow: 0px 0px 16px var(--varColWhiteH);
     box-shadow: 0px 0px 6px var(--varCol02);
-
     border-color: red;
     border-width: 6px;
 
@@ -14,17 +12,19 @@ Footer {
 
 .footerSection{
     background-color: var(--varColWhite3);
-
-
     color: black;
     text-decoration: none;
     list-style: none;
 }
 
-.footerDiv ul li a{
-
-
-    
+.colFooter ul li a{
     color: black;
     text-decoration: none;
+}
+
+.colFooter{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
