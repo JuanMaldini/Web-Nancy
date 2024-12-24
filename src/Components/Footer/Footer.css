@@ -7,7 +7,6 @@ Footer {
     box-shadow: 0px 0px 6px var(--varCol02);
     border-color: red;
     border-width: 6px;
-
 }
 
 .footerSection{
@@ -26,5 +25,10 @@ Footer {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+}
+
+.contactNav{
+    display: flex;
+    flex-wrap: nowrap;
 }

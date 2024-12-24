@@ -13,14 +13,14 @@ export default function Footer({}: Props) {
       <div className="footerSection">
         <footer>
 
-          <div className="colFooter footerDiv">
+          <div className="colFooter">
  
-            <ul className="d-flex flex-column col-3 list-unstyled">
+            <ul className="d-flex flex-column list-unstyled">
               <li><a href="#"><img src={ContactImg} alt="Image for Contact" width="100"/></a></li>
               <li>Buenos Aires, Argentina</li>
             </ul>
 
-            <ul className="nav d-flex flex-column col-2">
+            <ul className="nav d-flex flex-column">
               <li className="fs-7 fst-italic">LINKS</li>
               <li className=""><a href="#Navbar" className="linkUnderline">Inicio</a></li>
               <li className=""><a href="#ProductsArea" className="linkUnderline">Productos</a></li>
@@ -28,22 +28,22 @@ export default function Footer({}: Props) {
               <li className=""><a href="#Contact" className="linkUnderline">Contacto</a></li>
             </ul>
 
-            <ul className="nav d-flex flex-column col-2">
+            <ul className="nav d-flex flex-column">
               <li className="fs-7 fst-italic">AYUDA</li>
               <li className=""><a href="#Faq" className="linkUnderline">FAQ</a></li>
             </ul>
 
-            <ul className="nav d-flex flex-column col-3">
+            <ul className="nav d-flex flex-column">
               <li className="fs-7 fst-italic">CONTACTO</li>
-              <ul className="nav">
+              <ul className="nav contactNav">
                 <li className="mx-1"><a href={EmailLink} target="_blank"><IoMailOutline style={{ color: 'black' }} /></a></li>
                 <li className="mx-1"><a href={EmailLink} target="_blank" className="linkUnderline">Email</a></li>
               </ul>
-              <ul className="nav">
+              <ul className="nav contactNav">
                 <li className="mx-1"><a href={InstagramLink} target="_blank"><FaInstagram style={{ color: 'black' }} /></a></li>
                 <li className="mx-1"><a href={InstagramLink} target="_blank" className="linkUnderline">Instagram</a></li>
               </ul>
-              <ul className="nav">
+              <ul className="nav contactNav">
                 <li className="mx-1"><a href={getWhatsappContact()} target="_blank"><FaWhatsapp style={{ color: 'black' }} /></a></li>
                 <li className="mx-1"><a href={getWhatsappContact()} target="_blank" className="linkUnderline">Whatsapp</a></li>
               </ul>
