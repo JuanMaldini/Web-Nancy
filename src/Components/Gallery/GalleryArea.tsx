@@ -1,16 +1,15 @@
-import { useState } from "react";
 import Gallery from "./Gallery";
 import "./GalleryArea.css";
 import "../A-Helpers/Helper.css";
 
 import Spacebar from "../Spacebar/Spacebar";
-import ModalGallery from "../Modal/ModalGallery";
+// import ModalGallery from "../Modal/ModalGallery";
 import dataGalleryImages from "./data";
 
 type Props = {};
 
 export default function ProductsArea({}: Props) {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  // const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <>
@@ -27,7 +26,7 @@ export default function ProductsArea({}: Props) {
             <Gallery
               key={index}
               imageG={item.src}
-              onClick={() => setSelectedImage(item.src)}
+              // onClick={() => setSelectedImage(item.src)}
             />
           ))}
         </div>

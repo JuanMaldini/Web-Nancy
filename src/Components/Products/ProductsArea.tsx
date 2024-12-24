@@ -3,25 +3,25 @@ import Product from "./Product.tsx";
 import "./ProductsArea.css";
 
 import Spacebar from "../Spacebar/Spacebar.tsx";
-import ModalProduct from "../Modal/ModalProduct.tsx";
+// import ModalProduct from "../Modal/ModalProduct.tsx";
 import dataProducts from "./data.ts";
 
 type Props = {};
 
 export default function ProductsArea({}: Props) {
-  const [selectedProduct, setSelectedProduct] = useState<{
-    label: string;
-    productDescriptionTag: string;
-    productDescriptionGeneral?: string;
-    image1: string;
-    image2?: string;
-    image3?: string;
-    image4?: string;
-    image5?: string;
-    image6?: string;
-    image7?: string;
-    price: string;
-  } | null>(null);
+  // const [selectedProduct, setSelectedProduct] = useState<{
+  //   label: string;
+  //   productDescriptionTag: string;
+  //   productDescriptionGeneral?: string;
+  //   image1: string;
+  //   image2?: string;
+  //   image3?: string;
+  //   image4?: string;
+  //   image5?: string;
+  //   image6?: string;
+  //   image7?: string;
+  //   price: string;
+  // } | null>(null);
 
   return (
     <div id="ProductsArea" className="productsArea">
@@ -45,7 +45,7 @@ export default function ProductsArea({}: Props) {
             image6={item.image6}
             image7={item.image7}
             price={item.price}
-            onClick={() => setSelectedProduct(item)}
+            // onClick={() => setSelectedProduct(item)}
           />
         ))}
       </div>

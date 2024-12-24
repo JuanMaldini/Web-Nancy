@@ -3,7 +3,7 @@ import "../A-Helpers/Helper.css";
 
 type Props = {
   imageG: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export default function Gallery({ imageG, onClick }: Props) {
