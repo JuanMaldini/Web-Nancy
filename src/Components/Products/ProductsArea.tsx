@@ -8,8 +8,7 @@ import dataProducts from "./data.ts";
 
 type Props = {};
 
-export default function ProductsArea({ }: Props) {
-
+export default function ProductsArea({}: Props) {
   const [selectedProduct, setSelectedProduct] = useState<{
     label: string;
     productDescriptionTag: string;
@@ -31,7 +30,7 @@ export default function ProductsArea({ }: Props) {
         <p className="fs-5">Para que los puedas tener todos en tu hogar</p>
       </div>
       <Spacebar />
-      <div className="productsAreaProd" >
+      <div className="productsAreaProd">
         {dataProducts.map((item, index) => (
           <Product
             key={index}
@@ -50,7 +49,7 @@ export default function ProductsArea({ }: Props) {
           />
         ))}
       </div>
-      {selectedProduct && (
+      {/* {selectedProduct && (
         <ModalProduct
           label={selectedProduct.label}
           productDescriptionTag={selectedProduct.productDescriptionTag}
@@ -64,7 +63,7 @@ export default function ProductsArea({ }: Props) {
           image7={selectedProduct.image7}
           price={selectedProduct.price}
         />
-      )}
+      )} */}
     </div>
   );
 }

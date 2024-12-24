@@ -1,10 +1,10 @@
 :root {
-  --varCol01: #ffffff; /* Blanco */
-  --varCol02: #ffb7a1; /* Rosa claro */
-  --varCol02-B: #ffe5de; /* Rosa claro */
-  --varCol03: #d76c4c; /* Rojo */
-  --varCol04: #d3af5f; /* Dorado claro */
-  --varCol05: #a37718; /* Dorado oscuro */
+  --varCol01: #ffffff;
+  --varCol02: #ffb7a1;
+  --varCol02-B: #ffe5de;
+  --varCol03: #d76c4c;
+  --varCol04: #d3af5f;
+  --varCol05: #a37718;
 
   --varColWhite: rgb(235, 235, 235);
   --varColWhiteH: rgb(225, 225, 225);
@@ -14,7 +14,7 @@
 
   --varColWhiteTrans: rgba(255, 255, 255, 0.5);
 
-  --varWSPSize: 32px;
+  --varWSPSize: 28px;
 }
 
 @media (max-width: 390px) {
@@ -26,4 +26,14 @@
 @media (max-width: 1440px) {
 }
 @media (max-width: 1920px) {
+}
+
+.whatsappIcon {
+  display: flex;
+  font-size: var(--varWSPSize);
+  color: #25D366;
+}
+
+.whatsappIcon:hover{
+  filter: drop-shadow(0px 0px 2px rgb(37, 211, 102, 0.5));
 }

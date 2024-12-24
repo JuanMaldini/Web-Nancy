@@ -52,15 +52,9 @@
   border-radius: 0px 0px 8px 8px;
 }
 
-
 .prodcutButton {
   position: absolute;
   justify-self: center;
-}
-
-.whatsappIcon {
-  display: flex;
-  font-size: var(--varWSPSize) 
 }
 
 .card-title {

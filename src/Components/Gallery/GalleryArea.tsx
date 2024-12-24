@@ -9,23 +9,31 @@ import dataGalleryImages from "./data";
 
 type Props = {};
 
-export default function ProductsArea({ }: Props) {
+export default function ProductsArea({}: Props) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <div id="GalleryArea" className="bodyGalleryArea">
+    <>
+      <div className="bodyGalleryArea" id="GalleryArea">
         <div className="text-center">
           <p className="fs-2">Galería</p>
           <p className="fs-5">Una bella muestra de mis trabajos</p>
         </div>
+
         <Spacebar />
+
         <div className="galleryArea">
           {dataGalleryImages.map((item, index) => (
-            <Gallery key={index} imageG={item.src} onClick={() => setSelectedImage(item.src)}/>
+            <Gallery
+              key={index}
+              imageG={item.src}
+              onClick={() => setSelectedImage(item.src)}
+            />
           ))}
         </div>
-      {selectedImage &&
-        <ModalGallery imageG={selectedImage}/>}
-    </div>
+
+        {/* {selectedImage && <ModalGallery imageG={selectedImage} />} */}
+      </div>
+    </>
   );
 }
