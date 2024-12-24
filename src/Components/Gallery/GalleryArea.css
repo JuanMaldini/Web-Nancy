@@ -1,20 +1,25 @@
 .bodyGalleryArea {
-    background-color: var(--varCol02-B);
-    padding: 20px 16px;
-    margin: 0px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+  padding: 20px 16px;
+  margin: 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--varColWhite3);
 }
 
-.galleryArea{
+.galleryArea {
     border-radius: 32px;
-    background-color: var(--varColWhite03);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 16px;
     margin: 32px 0px;
     justify-content: center;
+}
+
+.GalleryBG {
+    background-color: var(--varCol02-B);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

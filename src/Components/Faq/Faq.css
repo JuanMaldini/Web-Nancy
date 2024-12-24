@@ -1,24 +1,18 @@
 .accordion {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-
-  --bs-accordion-border-radius: 0px;
+  --bs-accordion-border-radius: 16px;
   --bs-accordion-border-width: 0px;
   --bs-accordion-inner-border-radius: 0px;
   --bs-accordion-border-color: rgb(224, 203, 111);
   --bs-accordion-active-bg: rgb(224, 203, 111);
   --bs-accordion-btn-focus-box-shadow: rgba(255, 0, 0, 0);
+  --bs-accordion-bg: var(--varColWhite3);
 }
 
 .bodyFaq {
-  width: 100%;
-  margin: 0px;
   padding: 20px;
   background-color: var(--varColWhite3);
 }
 
-.accordion-button{
+.accordion-button {
   background-color: var(--varColWhite3);
 }

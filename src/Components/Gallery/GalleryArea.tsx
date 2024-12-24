@@ -14,24 +14,24 @@ export default function ProductsArea({}: Props) {
   return (
     <>
       <div className="bodyGalleryArea" id="GalleryArea">
-        <div className="text-center">
-          <p className="fs-2">Galería</p>
-          <p className="fs-5">Una bella muestra de mis trabajos</p>
+        <div className="GalleryBG">
+          <div className="text-center">
+            <p className="fs-2">Galería</p>
+            <p className="fs-5">Una bella muestra de mis trabajos</p>
+          </div>
+
+          <Spacebar />
+
+          <div className="galleryArea">
+            {dataGalleryImages.map((item, index) => (
+              <Gallery key={index}  imageG={item.src}
+                // onClick={() => setSelectedImage(item.src)}
+              />
+            ))}
+          </div>
+
+          {/* {selectedImage && <ModalGallery imageG={selectedImage} />} */}
         </div>
-
-        <Spacebar />
-
-        <div className="galleryArea">
-          {dataGalleryImages.map((item, index) => (
-            <Gallery
-              key={index}
-              imageG={item.src}
-              // onClick={() => setSelectedImage(item.src)}
-            />
-          ))}
-        </div>
-
-        {/* {selectedImage && <ModalGallery imageG={selectedImage} />} */}
       </div>
     </>
   );
