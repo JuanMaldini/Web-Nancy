@@ -32,7 +32,6 @@ export default function Product({
       <div className="cardProduct">
 
         <div id={`carouselExample-${label.replace(/\s+/g, "")}`} className="carousel slide" data-bs-ride="carousel">
-
           <div className="carousel-inner">
             {images.map((img, index) => (
               <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
@@ -40,7 +39,6 @@ export default function Product({
               </div>
             ))}
           </div>
-
           <button className="carousel-control-prev" type="button" data-bs-target={`#carouselExample-${label.replace(/\s+/g, "")}`} data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
@@ -49,7 +47,6 @@ export default function Product({
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
           </button>
-
         </div>
 
         <div className="card-body">

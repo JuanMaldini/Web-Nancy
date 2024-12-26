@@ -1,8 +1,0 @@
-.linkUnderline {
-  color: rgb(230, 13, 13);
-  transition: all 0.3s ease;
-}
-
-.linkUnderline:hover {
-  color: gray;
-}
