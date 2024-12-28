@@ -11,8 +11,8 @@ export default function Gallery({ imageG, onClick }: Props) {
     <img 
         src={imageG}
         alt="Gallery item"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        // data-bs-toggle="modal"
+        // data-bs-target="#exampleModal"
         onClick={onClick}
         className="card cardGeneral"
       />

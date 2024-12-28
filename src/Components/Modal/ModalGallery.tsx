@@ -1,22 +1,25 @@
-import "./Modal.css";
+import React from "react";
+import "./Modal.css"; // Puedes añadir estilos básicos aquí.
+import "../A-Helpers/Helper.css"
 
-type Props = {
+interface ModalProps {
   imageG: string;
-};
+  onClose: () => void;
+}
 
-export default function ModalGallery({ imageG }: Props) {
+const Modal: React.FC<ModalProps> = ({ imageG, onClose }) => {
   return (
-    <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div className="modal-dialog" role="document">
-        <div className="modal-content">
-          <div className="modal-header">
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div className="modal-body">
-            <img src={imageG} alt="Selected item" className="img-fluid" />
-          </div>
+    <div className="modal" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <div className="modal-header">
+          <button className="close-button" onClick={onClose}>&times;</button>
+        </div>
+        <div className="modal-body">
+          <img src={imageG} alt="Selected Image" />
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Modal;

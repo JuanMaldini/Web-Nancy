@@ -13,7 +13,7 @@ export default function ProductsArea({}: Props) {
   //   label: string;
   //   productDescriptionTag: string;
   //   productDescriptionGeneral?: string;
-  //   image1: string;
+    // image1: string;
   //   image2?: string;
   //   image3?: string;
   //   image4?: string;

@@ -26,7 +26,7 @@
 
 .carousel {
   background-color: var(--varColWhite);
-  border-radius: var(--verRadiusCard) var(--verRadiusCard) 0px 0px;
+  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
 }
 
 .card-body {
@@ -47,7 +47,7 @@
   margin: var(--varGapItem);
   display: flex;
   flex-direction: column;
-  border-radius: var(--verRadiusCard);
+  border-radius: var(--varRadiusCard);
   transition: all 0.2s ease;
   width: var(--varSizeX);
   height: 100%;
@@ -55,7 +55,7 @@
 
 .carousel-inner {
   background-color: var(--varColWhite3);
-  border-radius: var(--verRadiusCard) var(--verRadiusCard) 0px 0px;
+  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
   height: var(--varSizeY);
   width: var(--varSizeX);
 }
@@ -64,7 +64,7 @@
   height: auto;
   width: 100%;
   object-fit: cover;
-  border-radius: var(--verRadiusCard) var(--verRadiusCard) 0px 0px;
+  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
 }
 
 .cardlinks {
@@ -77,7 +77,7 @@
   width: 100%;
   justify-content: space-between;
   background-color: var(--varColWhite3);
-  border-radius: 0px 0px var(--verRadiusCard) var(--verRadiusCard);
+  border-radius: 0px 0px var(--varRadiusCard) var(--varRadiusCard);
 }
 
 .productButton {
@@ -110,7 +110,7 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-  border-radius: var(--verRadiusCard) var(--verRadiusCard) 0px 0px;
+  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
   width: 50%;
 }
 .carousel-control-prev-icon,
