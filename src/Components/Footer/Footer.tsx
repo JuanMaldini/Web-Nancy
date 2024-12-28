@@ -23,13 +23,14 @@ export default function Footer({}: Props) {
             <ul className="nav d-flex flex-column">
               <li className="fs-7 fst-italic">LINKS</li>
               <li className=""><a href="#Navbar" className="linkUnderline">Inicio</a></li>
+              <li className=""><a href="#CursosArea" className="linkUnderline">Cursos</a></li>
               <li className=""><a href="#ProductsArea" className="linkUnderline">Productos</a></li>
               <li className=""><a href="#GalleryArea" className="linkUnderline">Galería</a></li>
-              <li className=""><a href="#Contact" className="linkUnderline">Contacto</a></li>
             </ul>
 
             <ul className="nav d-flex flex-column">
               <li className="fs-7 fst-italic">AYUDA</li>
+              <li className=""><a href="#Contact" className="linkUnderline">Contacto</a></li>
               <li className=""><a href="#Faq" className="linkUnderline">FAQ</a></li>
             </ul>
 

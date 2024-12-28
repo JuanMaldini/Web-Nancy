@@ -1,51 +1,38 @@
-import Product from "./Product.tsx";
-import "./Product.css";
-
-
+import dataCursos from "./dataCursos.ts";
+import CardCurso from "./CardCurso.tsx";
 import Spacebar from "../Spacebar/Spacebar.tsx";
-// import ModalProduct from "../Modal/ModalProduct.tsx";
-import dataProducts from "./data.ts";
+import { cursosText } from "../A-Helpers/Helper.tsx";
+
 
 type Props = {};
 
-export default function ProductsArea({}: Props) {
-  // const [selectedProduct, setSelectedProduct] = useState<{
+export default function CursosArea({}: Props) {
+
+  //   const [selectedCurso, setSelectedCurso] = useState<{
   //   label: string;
-  //   productDescriptionTag: string;
-  //   productDescriptionGeneral?: string;
-  //   image1: string;
-  //   image2?: string;
-  //   image3?: string;
-  //   image4?: string;
-  //   image5?: string;
-  //   image6?: string;
-  //   image7?: string;
+  //   courseDescriptionTag: string;
+  //   courseDescriptionGeneral?: string;
+  //   imageCourse: string;
   //   price: string;
   // } | null>(null);
 
   return (
-    <div id="ProductsArea" className="productsArea">
+    <div id="CursosArea" className="productsArea">
       <div className="text-center">
-        <p className="fs-2">Productos</p>
-        <p className="fs-5">Para que los puedas tener todos en tu hogar</p>
+        <p className="fs-2">Cursos</p>
+        <p className="fs-5">{cursosText}</p>
       </div>
       <Spacebar />
       <div className="productsAreaProd">
-        {dataProducts.map((item, index) => (
-          <Product
+        {dataCursos.map((item, index) => (
+          <CardCurso
             key={index}
             label={item.label}
-            productDescriptionTag={item.productDescriptionTag}
-            productDescriptionGeneral={item.productDescriptionGeneral}
-            image1={item.image1}
-            image2={item.image2}
-            image3={item.image3}
-            image4={item.image4}
-            image5={item.image5}
-            image6={item.image6}
-            image7={item.image7}
+            courseDescriptionTag={item.courseDescriptionTag}
+            // courseDescriptionGeneral={item.courseDescriptionGeneral}
+            imageCurso={item.imageCurso}
             price={item.price}
-            // onClick={() => setSelectedProduct(item)}
+            // onClick={() => setSelectedCurso(item)}
           />
         ))}
       </div>
@@ -54,13 +41,7 @@ export default function ProductsArea({}: Props) {
           label={selectedProduct.label}
           productDescriptionTag={selectedProduct.productDescriptionTag}
           productDescriptionGeneral={selectedProduct.productDescriptionGeneral}
-          image1={selectedProduct.image1}
-          image2={selectedProduct.image2}
-          image3={selectedProduct.image3}
-          image4={selectedProduct.image4}
-          image5={selectedProduct.image5}
-          image6={selectedProduct.image6}
-          image7={selectedProduct.image7}
+          imageCurso={selectedProduct.imageCurso}
           price={selectedProduct.price}
         />
       )} */}

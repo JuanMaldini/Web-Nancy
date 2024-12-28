@@ -15,6 +15,17 @@
   --varColWhiteTrans: rgba(255, 255, 255, 0.5);
 
   --varWSPSize: 28px;
+
+  --varSizeY: 220px;
+  --varSizeX: 180px;
+
+  --varSizeYCurso: 220px;
+  --varSizeXCurso: 450px;
+
+  --verRadiusCard: 12px;
+
+  --varGapTag: 4px;
+  --varGapItem: 8px;
 }
 
 @media (max-width: 390px) {
@@ -45,4 +56,15 @@
 
 .linkUnderline:hover {
   color: gray;
+}
+
+.cardGeneral {
+  filter: drop-shadow(0px 0px 3px var(--varCol02));
+  transition: all 0.2s ease;
+  will-change: transform, filter;
+}
+
+.cardGeneral:hover {
+  filter: drop-shadow(0px 0px 10px var(--varCol02));
+  scale: 1.003;
 }

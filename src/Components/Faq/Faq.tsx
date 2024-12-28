@@ -47,7 +47,7 @@ export default function Faq({}: Props) {
         <p>Preguntas Frecuentes</p>
       </div>
       <div className="accordion" id="accordionExample">
-        {renderFaqItems()} {/* Renderiza dinámicamente los items */}
+        {renderFaqItems()}
       </div>
     </div>
   );

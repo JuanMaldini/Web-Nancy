@@ -1,7 +1,5 @@
 import Product from "./Product.tsx";
 import "./Product.css";
-
-
 import Spacebar from "../Spacebar/Spacebar.tsx";
 // import ModalProduct from "../Modal/ModalProduct.tsx";
 import dataProducts from "./data.ts";
@@ -10,6 +8,7 @@ import { productsText } from "../A-Helpers/Helper.tsx";
 type Props = {};
 
 export default function ProductsArea({}: Props) {
+
   // const [selectedProduct, setSelectedProduct] = useState<{
   //   label: string;
   //   productDescriptionTag: string;

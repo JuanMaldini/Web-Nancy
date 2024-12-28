@@ -1,26 +1,30 @@
-
 export const getWhatsappContactProduct = (label: string) => {
   const Celular = "5491135578288";
   const WelcomeText = `Hola Nancy, un gusto. Estaba revisando su web y me gustaría más información sobre el producto que se llama "${label}", Gracias!.`;
   const WelcomeTextF = encodeURIComponent(WelcomeText);
-
   return `http://wa.me/${Celular}?text=${WelcomeTextF}`;
 };
+
+export const getWhatsappContactCourse = (label: string) => {
+  const Celular = "5491135578288";
+  const WelcomeText = `Hola Nancy, un gusto. Estaba revisando su web y me gustaría más información sobre el curso que se llama "${label}", Gracias!.`;
+  const WelcomeTextF = encodeURIComponent(WelcomeText);
+  return `http://wa.me/${Celular}?text=${WelcomeTextF}`;
+};
+
 
 export const getWhatsappContact = () => {
   const Celular = "5491135578288";
   const ContactText = `Hola Nancy, espero que se encuentre bien. Me estoy contactando desde la página web.`;
   const ContactTextF = encodeURIComponent(ContactText);
-
   return `http://wa.me/${Celular}?text=${ContactTextF}`;
 }
 
 export const InstagramLink = "https://www.instagram.com/breathesmellrelax";
 export const EmailLink = "";
-// export const EmailLink = "mailto:juan.maldini@outlook.com"
 
 export const descriptionText = "Lorem ipsum dolor sit amet, consectetur  Duis eu purus vel tortor fermentum lacinia. Duis vel commodo nunc. Mauris dictum erat ipsum, et finibus augue volutpat in. Sed mattis ac neque porttitor consequat. In ac augue varius, ultricies quam ac, sollicitudin mauris. Sed pretium in nisl eu consectetur. Nam quis elementum augue, in auctor erat. Praesent sed eros at orci lobortis rhoncus nec id nibh. Sed ante est, iaculis ut nisl a, efficitur maximus lorem.";
-
+export const cursosText = "Para que aprendas las técnicas mas divertidas";
 export const productsText = "Para que los puedas tener todos en tu hogar";
 export const galleryText = "Una bella muestra de mis trabajos";
 export const contactText = "Un texto para llamar la atencion de los clientes, ofrecerles algunos servicios, asistencia, comentarios o difrentes propuestas";

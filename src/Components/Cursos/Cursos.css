@@ -1,0 +1,44 @@
+.cardCurso {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  width: var(--varSizeXCurso);
+  height: var(--varSizeYCurso);
+  border-radius: var(--verRadiusCard);
+  margin: var(--varGapItem);
+}
+
+.img-curso {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius:  var(--verRadiusCard) 0px 0px var(--verRadiusCard);
+}
+
+.cardCursosData {
+  display: grid;
+  flex-direction: column;
+  padding: 16px;
+  background-color: var(--varColWhite3);
+  border-radius:  0px var(--verRadiusCard) var(--verRadiusCard) 0px;
+
+}
+
+.tagCurso {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: var(--varGapTag);
+}
+
+.cardlinksCurso {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.card-bodyCurso {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

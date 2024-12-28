@@ -22,14 +22,19 @@ export default function Product({
   label,
   productDescriptionTag,
   // productDescriptionGeneral, onClick,
-  image1, image2, image3, image4, image5, image6, image7, price,}: ProductProps) {
-
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  price,
+}: ProductProps) {
     const images = [ image1, image2, image3, image4, image5, image6, image7 ].filter((img) => img && img.trim() !== "");
 
   return (
-    <>
-
-      <div className="cardProduct">
+      <div className="cardProduct cardGeneral">
 
         <div id={`carouselExample-${label.replace(/\s+/g, "")}`} className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
@@ -74,7 +79,5 @@ export default function Product({
         </div>
 
       </div>
-
-    </>
   );
 }

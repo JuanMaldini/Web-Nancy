@@ -75,7 +75,7 @@ export const dataProducts: ProductProps[] = [
   {
     label: "Aros 02",
     productDescriptionGeneral: "Descripción general de Aros 02",
-    productDescriptionTag: "Tag Aros",
+    productDescriptionTag: "Tag Tag Tag Aros",
     image1: Aros_02_01,
     image2: Aros_02_02,
     image3: Aros_02_03,

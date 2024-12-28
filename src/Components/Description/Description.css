@@ -1,10 +1,8 @@
 .descriptionBG{
-    margin: 32px 0px;
+    margin: 64px 0px;
 }
 
 .description {
-    /* backgrosund-color: var(--varColWhite3); */
-    
     height: 1150px;
     padding: 32px;
     display: grid;
@@ -19,7 +17,6 @@
 }
 
 .description > img {
-
     position: absolute;
     width: 100%;
     height: 100%;
@@ -29,7 +26,6 @@
 }
 
 .descriptionCol01{
-    
     border-radius: 32px 32px 0px 0px;
     grid-area: descriptionCol01;
     background-color: var(--varColWhiteTrans);

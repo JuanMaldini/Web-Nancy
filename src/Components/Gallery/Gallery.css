@@ -1,21 +1,13 @@
 .card {
-  scale: 1;
-  transition: all 0.3s ease;
-  box-shadow: 0px 0px 7px var(--varCol02);
-  max-width: 120px;
-  transition: all 0.3s ease;
+  width: var(--varSizeX);
+  height: var(--varSizeY);
   object-fit: cover;
-  border-radius: 8px;
-}
-
-.card:hover {
-  box-shadow: 0px 0px 20px var(--varCol02);
-  scale: 1.02;
+  border-radius: var(--verRadiusCard);
+  margin: var(--varGapItem);
 }
 
 .bodyGalleryArea {
   padding: 20px 16px;
-  margin: 0px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,19 +15,18 @@
 }
 
 .galleryArea {
-    border-radius: 32px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin: 32px 0px;
-    justify-content: center;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 32px 0px;
+  justify-content: center;
 }
 
 .GalleryBG {
-    background-color: var(--varCol02-B);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 32px;
+  background-color: var(--varCol02-B);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 32px;
 }

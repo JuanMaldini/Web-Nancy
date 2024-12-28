@@ -14,7 +14,7 @@ export default function Gallery({ imageG, onClick }: Props) {
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
         onClick={onClick}
-        className="card"
+        className="card cardGeneral"
       />
   );
 }
