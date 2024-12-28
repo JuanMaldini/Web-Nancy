@@ -29,7 +29,7 @@ export const productsText = "Para que los puedas tener todos en tu hogar";
 export const galleryText = "Una bella muestra de mis trabajos";
 export const contactText = "Un texto para llamar la atencion de los clientes, ofrecerles algunos servicios, asistencia, comentarios o difrentes propuestas";
 
-export const faqs = {
+export const faqs: { [key: string]: string } = {
   faq01A: "¿Cuál es el tiempo de entrega?",
   faq01B: "El tiempo de entrega es de 3 a 5 días hábiles.",
   faq02A: "¿Cuál es el costo de envío?",
