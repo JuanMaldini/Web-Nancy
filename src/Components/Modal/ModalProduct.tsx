@@ -32,8 +32,6 @@ function ModalProduct({
   price,
   onClose,
 }: Props) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   const images = [image1,image2,image3,image4,image5,image6,image7,].filter(Boolean);
 
   return (

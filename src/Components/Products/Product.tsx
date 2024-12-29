@@ -21,7 +21,7 @@ export type ProductProps = {
 export default function Product({
   label,
   productDescriptionTag,
-  productDescriptionGeneral,
+  // productDescriptionGeneral,
   image1,
   image2,
   image3,
@@ -32,7 +32,7 @@ export default function Product({
   price,
   onClick,
 }: ProductProps) {
-    const images = [ image1, image2, image3, image4, image5, image6, image7 ].filter((img) => img && img.trim() !== "");
+  const images = [ image1, image2, image3, image4, image5, image6, image7 ].filter((img) => img && img.trim() !== "");
 
   return (
       <div className="cardProduct cardGeneral">
