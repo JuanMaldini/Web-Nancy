@@ -1,6 +1,5 @@
 .productsArea {
   background-color: var(--varColWhite3);
-  padding: 20px 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,18 +28,58 @@
   border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
 }
 
-.card-body {
+.card-body-modal {
   cursor: pointer;
   display: grid;
-  grid-template-rows: 1fr 1.5fr 1fr;
+  grid-template-rows: 0.8fr 1.3fr 0.8fr 1fr;
   grid-template-areas:
     "card-title"
     "tagClass"
-    "priceClass";
+    "priceClass"
+    "cardlinks";
+  transition: all 0.3s ease;
+  height: 100%;
+  border: none;
+}
+
+.card-body-pruduct{
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: 0.8fr 1.3fr 0.8fr 1fr;
+  grid-template-areas:
+    "card-title"
+    "tagClass"
+    "priceClass"
+    "cardlinks";
+  transition: all 0.3s ease;
+  height: 100%;
+  border: none;
+  background-color: var(--varColWhite3);
+  border-radius: 0px 0px var(--varRadiusCard) var(--varRadiusCard);
+
+}
+
+.card-product-description{
+  grid-area: card-product-description;
+  padding: 0px 10px 10px 10px;
+}
+
+.card-body-modal{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  grid-template-rows: 0.8fr.7fr 1.3fr 0.8fr 1fr;
+  grid-template-areas:
+    "card-title"
+    "tagClass"
+    "priceClass"
+    "card-product-description"
+    "cardlinks";
   transition: all 0.3s ease;
   background-color: var(--varColWhite3);
   height: 100%;
   border: none;
+
 }
 
 .cardProduct {

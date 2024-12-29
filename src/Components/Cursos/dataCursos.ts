@@ -15,14 +15,14 @@ export const dataCurso: CursoProp[] = [
     courseDescriptionTag: "textil bordado bordado costura artesanal",
     courseDescriptionGeneral: "descripcion general",
     imageCurso: img01,
-    price: "1500",
+    price: "2000",
   },
   {
     label: "Este es el nombre del curso 03",
     courseDescriptionTag: "textil bordado bordado costura artesanal",
     courseDescriptionGeneral: "descripcion general",
     imageCurso: img01,
-    price: "1500",
+    price: "2500",
   },
 ];
 

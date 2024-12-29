@@ -23,9 +23,16 @@ export default function ProductsArea({}: Props) {
           </div>
           <Spacebar />
           <div className="galleryArea">
-            {dataGalleryImages.map((item, index) => (<Gallery key={index} imageG={item.src} onClick={() => setSelectedImage(item.src)}/>))}
+            {dataGalleryImages.map((item, index) => (
+              <Gallery key={index} imageG={item.src} onClick={() => setSelectedImage(item.src)}/>
+            ))}
           </div>
-        {selectedImage && (<ModalGallery imageG={selectedImage} onClose={() => setSelectedImage(null)}/>)}
+          {selectedImage && (
+            <ModalGallery
+              imageG={selectedImage}
+              onClose={() => setSelectedImage(null)}
+            />
+          )}
         </div>
       </div>
     </>

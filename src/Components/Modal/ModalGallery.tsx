@@ -1,6 +1,7 @@
 import React from "react";
 import "./Modal.css"; // Puedes añadir estilos básicos aquí.
 import "../A-Helpers/Helper.css"
+import { IoClose } from "react-icons/io5";
 
 interface ModalProps {
   imageG: string;
@@ -10,12 +11,10 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ imageG, onClose }) => {
   return (
     <div className="modal" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-header">
-          <button className="close-button" onClick={onClose}>&times;</button>
-        </div>
-        <div className="modal-body">
-          <img src={imageG} alt="Selected Image" />
+      <div className="modal-content-gallery" onClick={(e) => e.stopPropagation()}>
+        <button className="close-button-modal" onClick={onClose}><IoClose/></button>
+        <div className="modal-body-gallery">
+          <img src={imageG} alt="Selected image from gallery" />
         </div>
       </div>
     </div>

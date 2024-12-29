@@ -11,16 +11,28 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius:  var(--varRadiusCard) 0px 0px var(--varRadiusCard);
+  border-radius: var(--varRadiusCard) 0px 0px var(--varRadiusCard);
 }
+
+.card-curso-description,
+.priceClassCurso,
+.card-titleCurso {
+  display: flex;
+}
+
+.priceClassCurso p{
+  display: flex;
+  
+  align-items: center;
+}
+
 
 .cardCursosData {
   display: grid;
   flex-direction: column;
   padding: 16px;
   background-color: var(--varColWhite3);
-  border-radius:  0px var(--varRadiusCard) var(--varRadiusCard) 0px;
-
+  border-radius: 0px var(--varRadiusCard) var(--varRadiusCard) 0px;
 }
 
 .tagCurso {
@@ -36,6 +48,10 @@
   flex-direction: row;
   align-items: center;
   gap: 16px;
+}
+
+.cardlinksCurso p {
+  align-self: center;
 }
 
 .card-bodyCurso {

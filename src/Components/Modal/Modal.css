@@ -7,47 +7,114 @@
   align-items: center;
   z-index: 100;
   overflow: hidden;
+  padding: 0px;
+  margin: 0px;
 }
 
-.modal-content {
-  background-color: rgb(255, 255, 255);
-  max-width: 800px;
-  max-height: 80vh;
-  overflow: hidden;
-  border-radius: var(--varRadiusCard);
+.card-body-product {
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: 0.8fr 1.3fr 0.8fr 0.8fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "card-title"
+    "tagClass"
+    "card-product-description"
+    "priceClass"
+    "cardlinks";
+  transition: all 0.3s ease;
+  background-color: var(--varColWhite3);
+  border: none;
+}
+
+.card-body-modal{
+  border-radius: 0px 0px var(--varRadiusCard) var(--varRadiusCard);
+  
+}
+
+.modal-body-gallery img {
+  height: 80vh;
+}
+
+.card-curso-description {
+  grid-area: card-curso-description;
+}
+
+.card-product-description {
+  grid-area: card-product-description;
+}
+
+.modal-content-curso {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(187, 38, 38, 0);
+}
+
+.modal-content-product {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.modal-content-gallery {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background-color: var(--varColWhiteH);
+  margin: 0px;
+  padding: 0px;
 }
 
-.modal-content img {
+.img-curso {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
 
+.carousel-img-modal{
+  object-fit: contain;
+  height: auto;
+  width: 100%;
+  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
+}
+
 .modal-header {
   display: flex;
-  justify-content: flex-end;
+  align-self: flex-end;
   padding: 0px;
-  margin: 0px;
-  background-color: transparent; /* Fondo transparente */
   border: none;
 }
 
-.modal-header .close-button {
+.close-button-modal {
+  padding: 0px;
+  margin: 0px;
   background: none;
-  border: none;
   font-size: 30px;
   cursor: pointer;
   transition: color 0.3s ease;
 }
+.close-button-modal {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-width: 0px;
+  border-radius: 8px;
+  padding: 0px 10px 8px 10px;
+  margin: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  color: rgb(0, 0, 0);
 
-.modal-body {
-  display: flex;
-  justify-content: center;
-  padding: 0px;
-  margin: 0px;
+}
+
+.close-button-modal:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+  /* color: rgb(61, 61, 61); */
 }
 
 .modal-footer {
