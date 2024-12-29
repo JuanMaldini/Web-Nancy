@@ -16,7 +16,7 @@ export default function CardCurso({
   label,
   imageCurso,
   courseDescriptionTag,
-  courseDescriptionGeneral,
+  // courseDescriptionGeneral,
   onClick,
   price,
 }: CursoProp) {

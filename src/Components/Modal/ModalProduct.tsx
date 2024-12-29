@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { getWhatsappContactProduct } from "../A-Helpers/Helper";
