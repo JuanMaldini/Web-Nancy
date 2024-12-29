@@ -39,12 +39,11 @@ function ModalProduct({
 
         <button className="close-button-modal" onClick={onClose}><IoClose/></button>
 
-        <div className="cardProduct cardGeneral">
-
+        <div className="cardProduct-modal cardGeneral">
           <div id={`carouselExample-${label.replace(/\s+/g, "")}`} className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
               {images.map((img, index) => (
-                <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+                <div key={index} className={`carousel-item-modal ${index === 0 ? "active" : ""}`}>
                   <img src={img} className="carousel-img-modal" alt={`Image ${index + 1}`}/>
                 </div>
               ))}
@@ -61,7 +60,7 @@ function ModalProduct({
 
           <div className="card-body-modal">
             <div>
-              <p className="card-title">{label}</p>
+              <div className="card-title">{label}</div>
             </div>
 
             <div className="tagClass">
@@ -71,11 +70,11 @@ function ModalProduct({
             </div>
 
             <div className="priceClass">
-              <p className="m-0">$ {price} ARS</p>
+              <div>$ {price} ARS</div>
             </div>
 
             <div className="card-product-description">
-              <p>{productDescriptionGeneral}</p>
+              {productDescriptionGeneral}
             </div>
 
             <div className="cardlinks">

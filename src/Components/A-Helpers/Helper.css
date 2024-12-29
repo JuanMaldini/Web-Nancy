@@ -27,6 +27,8 @@
   --varGapTag: 4px;
   --varGapItem: 8px;
   --varSpacingArea: 0px 16px;
+
+  --varHeightModal:70vh;
 }
 
 @media (max-width: 390px) {

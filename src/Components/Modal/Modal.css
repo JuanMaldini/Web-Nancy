@@ -27,13 +27,22 @@
   border: none;
 }
 
-.card-body-modal{
+.cardProduct-modal {
+  margin: var(--varGapItem);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--varRadiusCard);
+  transition: all 0.2s ease;
+  width: auto;
+  height: var(--varHeightModal);
+}
+
+.card-body-modal {
   border-radius: 0px 0px var(--varRadiusCard) var(--varRadiusCard);
-  
 }
 
 .modal-body-gallery img {
-  height: 80vh;
+  height: var(--varHeightModal);
 }
 
 .card-curso-description {
@@ -42,24 +51,28 @@
 
 .card-product-description {
   grid-area: card-product-description;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+
+.cardCurso-modal{
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  border-radius: var(--varRadiusCard);
 }
 
 .modal-content-curso {
-  display: flex;
-  margin: 0px;
-  padding: 0px;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(187, 38, 38, 0);
+  width: var(--varHeightModal);
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
 }
 
 .modal-content-product {
   display: flex;
-  margin: 0px;
-  padding: 0px;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0);
 }
 
 .modal-content-gallery {
@@ -71,15 +84,13 @@
 }
 
 .img-curso {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
-.carousel-img-modal{
-  object-fit: contain;
-  height: auto;
-  width: 100%;
+.carousel-img-modal {
+  /* object-fit: contain; */
+  height: var(--varHeightModal);
   border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
 }
 
@@ -109,10 +120,9 @@
   background-color: rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
   color: rgb(0, 0, 0);
-
 }
 
-.close-button-modal:hover{
+.close-button-modal:hover {
   background-color: rgba(255, 255, 255, 0.2);
   /* color: rgb(61, 61, 61); */
 }

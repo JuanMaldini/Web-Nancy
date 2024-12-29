@@ -28,14 +28,14 @@ const ModalCourse: React.FC<ModalProps> = ({
 
         <button className="close-button-modal" onClick={onClose}><IoClose/></button>
 
-        <div className="cardCurso cardGeneral">
+        <div className="cardCurso-modal cardGeneral">
           <div className="cardCursosImg">
             <img src={imageCurso} className="img-curso" alt={`alt ${imageCurso}`}/>
           </div>
           <div className="cardCursosData">
             <div className="card-bodyCurso">
               <div>
-                <p className="card-titleCurso">{label}</p>
+                <div className="card-titleCurso">{label}</div>
               </div>
               <div className="tagCurso">
                 {courseDescriptionTag.split(" ").map((word, index) => (
@@ -43,13 +43,15 @@ const ModalCourse: React.FC<ModalProps> = ({
                 ))}
               </div>
               <div className="card-curso-description">
-                <p>{courseDescriptionGeneral}</p>
+                <div>{courseDescriptionGeneral}</div>
               </div>
               <div className="priceClassCurso">
-                <p className="m-0">$ {price} ARS</p>
+                <div>$ {price} ARS</div>
               </div>
               <div className="cardlinksCurso">
-                <p>Contáctame!</p>
+                <a className="Class1" href={getWhatsappContactCourse(label)} target="_blank">
+                Contáctame!
+                </a>
                 <a className="whatsappIcon" href={getWhatsappContactCourse(label)} target="_blank"><FaWhatsapp className="" style={{ color: "#25D366" }} /></a>
               </div>
             </div>

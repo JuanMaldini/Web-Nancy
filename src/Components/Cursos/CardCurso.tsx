@@ -29,7 +29,7 @@ export default function CardCurso({
           <div className="cardCursosData">
             <div className="card-bodyCurso">
               <div>
-                <p className="card-titleCurso">{label}</p>
+                <div className="card-titleCurso">{label}</div>
               </div>
               <div className="tagCurso">
                 {courseDescriptionTag.split(" ").map((word, index) => (
@@ -37,7 +37,7 @@ export default function CardCurso({
                 ))}
               </div>
               <div className="priceClassCurso">
-                <p className="m-0">$ {price} ARS</p>
+                <div>$ {price} ARS</div>
               </div>
               <div className="cardlinksCurso">
                 <div className="Class1 CursosButton">Ver más</div>
