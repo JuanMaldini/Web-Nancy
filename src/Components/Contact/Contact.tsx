@@ -12,8 +12,8 @@ export default function Contact({}: Props) {
     <div id="Contact" className="bodyContactSection">
       <div className="bodyContact">
             <h2>Estemos en contacto!</h2>
-            <Spacebar/>
-            <div className="bodyContactItem g-4 p-5">
+              <Spacebar/>
+          <div className="bodyContactItem g-4 p-5">
 
               <div className="feature col contactImg">
                 <img src={ContactImg} alt="Image for Contact" width="300"/>

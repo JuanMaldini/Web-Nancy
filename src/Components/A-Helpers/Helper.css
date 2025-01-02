@@ -20,7 +20,7 @@
   --varSizeX: 180px;
 
   --varSizeYCurso: 220px;
-  --varSizeXCurso: 450px;
+  --varSizeXCurso: 320px;
 
   --varRadiusCard: 12px;
 
@@ -31,16 +31,12 @@
   --varHeightModal:70vh;
 }
 
-@media (max-width: 390px) {
-}
-@media (max-width: 768px) {
-}
-@media (max-width: 1080px) {
-}
-@media (max-width: 1440px) {
-}
-@media (max-width: 1920px) {
-}
+@media (max-width: 390px) {}
+@media (max-width: 414px) {}
+@media (max-width: 430px) {}
+@media (max-width: 768px) {}
+@media (max-width: 1440px) {}
+@media (max-width: 1920px) {}
 
 .whatsappIcon {
   display: flex;

@@ -24,7 +24,10 @@ export default function ProductsArea({}: Props) {
           <Spacebar />
           <div className="galleryArea">
             {dataGalleryImages.map((item, index) => (
-              <Gallery key={index} imageG={item.src} onClick={() => setSelectedImage(item.src)}/>
+              <Gallery
+              key={index}
+              imageG={item.src}
+              onClick={() => setSelectedImage(item.src)}/>
             ))}
           </div>
           {selectedImage && (

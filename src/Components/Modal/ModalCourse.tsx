@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Modal.css"; // Puedes añadir estilos básicos aquí.
 import "../A-Helpers/Helper.css"
 import { getWhatsappContactCourse } from "../A-Helpers/Helper";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import ModalGallery from "./ModalGallery";
 
 interface ModalProps {
   label: string;
@@ -22,6 +23,8 @@ const ModalCourse: React.FC<ModalProps> = ({
   price,
   onClose,
 }) => {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
   return (
     <div className="modal" onClick={onClose}>
       <div className="modal-content-curso" onClick={(e) => e.stopPropagation()}>
@@ -30,7 +33,12 @@ const ModalCourse: React.FC<ModalProps> = ({
 
         <div className="cardCurso-modal cardGeneral">
           <div className="cardCursosImg">
-            <img src={imageCurso} className="img-curso" alt={`alt ${imageCurso}`}/>
+            <img
+            src={imageCurso}
+            className="img-curso"
+            alt={`alt ${imageCurso}`}
+            onClick={() => setSelectedImage(imageCurso)}
+            />
           </div>
           <div className="cardCursosData">
             <div className="card-bodyCurso">
@@ -57,6 +65,12 @@ const ModalCourse: React.FC<ModalProps> = ({
             </div>
           </div>
         </div>
+          {selectedImage && (
+            <ModalGallery
+              imageG={selectedImage}
+              onClose={() => setSelectedImage(null)}
+            />
+          )}
 
       </div>
     </div>

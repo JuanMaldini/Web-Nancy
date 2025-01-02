@@ -23,7 +23,22 @@ export const getWhatsappContact = () => {
 export const InstagramLink = "https://www.instagram.com/breathesmellrelax";
 export const EmailLink = "";
 
-export const descriptionText = "Lorem ipsum dolor sit amet, consectetur  Duis eu purus vel tortor fermentum lacinia. Duis vel commodo nunc. Mauris dictum erat ipsum, et finibus augue volutpat in. Sed mattis ac neque porttitor consequat. In ac augue varius, ultricies quam ac, sollicitudin mauris. Sed pretium in nisl eu consectetur. Nam quis elementum augue, in auctor erat. Praesent sed eros at orci lobortis rhoncus nec id nibh. Sed ante est, iaculis ut nisl a, efficitur maximus lorem.";
+
+
+export const getPhoneContact = () => {
+  return `tel:+5491135578288`;
+}
+
+
+
+
+export const descriptionText1= "Te cuento que fui muy afortunada al tener una abuela que me enseñó algunos puntos de crochet y bordado entre tantas otras cosas divertidas y que SE que hoy me inspiran.";
+export const descriptionText2= "Y hace 4 años que paso tiempo en mi espacio creando lo que resuena en mi.";
+export const descriptionText3= "Y aquí encontras un poco de lo que sucede en mi escaparate 🧶🪡🧵🧘🏻‍♀🪬🛍🧸🎁🎀🎉";
+
+
+
+
 export const cursosText = "Para que aprendas las técnicas mas divertidas";
 export const productsText = "Para que los puedas tener todos en tu hogar";
 export const galleryText = "Una bella muestra de mis trabajos";

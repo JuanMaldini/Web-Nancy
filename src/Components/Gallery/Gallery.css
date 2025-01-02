@@ -1,6 +1,6 @@
 .card {
-  width: var(--varSizeX);
-  height: var(--varSizeY);
+  width: 150px;
+  height: 220px;
   object-fit: cover;
   border-radius: var(--varRadiusCard);
   margin: var(--varGapItem);
@@ -11,6 +11,7 @@
   flex-direction: column;
   align-items: center;
   background-color: var(--varColWhite3);
+  margin: 0px 16px;
 }
 
 .galleryArea {
@@ -28,6 +29,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 32px;
+  padding: 32px 0px;
 }
 
 .modal-overlay {
@@ -65,3 +67,26 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+.card {
+  width: 150px;
+  height: 220px;
+}
+
+  
+@media (min-width: 390px) {}
+@media (min-width: 414px) {}
+@media (min-width: 430px) {}
+@media (min-width: 768px) {
+  .card {
+    width: 200px;
+    height: 290px;
+  }
+}
+@media (min-width: 1440px) {
+  .card {
+    width: 250px;
+    height: 360px;
+  }
+}
+@media (min-width: 1920px) {}

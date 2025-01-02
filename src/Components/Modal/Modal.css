@@ -42,7 +42,7 @@
 }
 
 .modal-body-gallery img {
-  height: var(--varHeightModal);
+  width: 300px;
 }
 
 .card-curso-description {
@@ -56,17 +56,14 @@
   justify-self: center;
 }
 
-.cardCurso-modal{
+.cardCurso-modal {
   display: grid;
   grid-template-columns: 1fr 1.7fr;
   border-radius: var(--varRadiusCard);
 }
 
 .modal-content-curso {
-  width: var(--varHeightModal);
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
+  width: 330px;
 }
 
 .modal-content-product {
@@ -78,9 +75,6 @@
 .modal-content-gallery {
   display: flex;
   flex-direction: column;
-  background-color: var(--varColWhiteH);
-  margin: 0px;
-  padding: 0px;
 }
 
 .img-curso {
@@ -132,6 +126,25 @@
   border: none;
 }
 
+@media (min-width: 390px) {
+  .modal-content-curso {
+    width: 340px;
+  }
+}
+@media (min-width: 414px) {
+  .modal-content-curso {
+    width: 350px;
+  }
+}
+@media (max-width: 480px) {
+  .modal-content {
+    width: 100%; /* Hace que el modal ocupe todo el ancho en pantallas muy pequeñas */
+    padding: 5px;
+  }
+  .modal-header .close-button {
+    font-size: 22px;
+  }
+}
 @media (max-width: 768px) {
   .modal-content {
     width: 95%; /* Hace que el modal ocupe el 95% del ancho en pantallas pequeñas */
@@ -144,13 +157,19 @@
   }
 }
 
-@media (max-width: 480px) {
-  .modal-content {
-    width: 100%; /* Hace que el modal ocupe todo el ancho en pantallas muy pequeñas */
-    padding: 5px;
+@media (min-width: 768px) {
+  .modal-content-curso {
+    width: 500px;
   }
-
-  .modal-header .close-button {
-    font-size: 22px;
+  .modal-body-gallery img {
+    width: 400px;
+  }
+}
+@media (min-width: 1440px) {
+  .modal-content-curso {
+    width: 800px;
+  }
+  .modal-body-gallery img {
+    width: 500px;
   }
 }

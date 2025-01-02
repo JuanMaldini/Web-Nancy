@@ -20,8 +20,10 @@ export default function Faq({}: Props) {
       if (faqs[questionKey] && faqs[answerKey]) {
         faqItems.push(
           <div className="p-1" key={i}> {/* Añade "key" aquí */}
-            <Spacebar />
-            <div className="accordion-item">
+          <div className="d-flex justify-content-center">
+            <Spacebar/>
+          </div>
+          <div className="accordion-item">
               <h2 className="accordion-header">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${i}`} aria-expanded="false" aria-controls={`collapse${i}`}>
                   {faqs[questionKey]} {/* Título de la pregunta */}
