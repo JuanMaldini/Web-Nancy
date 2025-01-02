@@ -4,7 +4,7 @@ import { LuPhone } from "react-icons/lu";
 import ContactImg from "../../assets/Icons/Logo/Logo01.png";
 import "./Footer.css";
 import Spacebar from "../Spacebar/Spacebar";
-import { EmailLink, getPhoneContact, getWhatsappContact, InstagramLink } from "../A-Helpers/Helper";
+import { getPhoneContact, getWhatsappContact, InstagramLink } from "../A-Helpers/Helper";
 
 type Props = {}
 
