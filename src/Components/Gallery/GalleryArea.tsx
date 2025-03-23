@@ -32,7 +32,7 @@ export default function ProductsArea({}: Props) {
           </div>
           {selectedImage && (
             <ModalGallery
-              imageG={selectedImage}
+              image01={selectedImage}
               onClose={() => setSelectedImage(null)}
             />
           )}

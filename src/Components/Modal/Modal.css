@@ -1,14 +1,14 @@
 .modal {
   position: fixed;
   height: 100vh;
+  width: 100vw;
+  /* width: 100%; */
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
   overflow: hidden;
-  padding: 0px;
-  margin: 0px;
 }
 
 .card-body-product {
@@ -28,13 +28,12 @@
 }
 
 .cardProduct-modal {
-  margin: var(--varGapItem);
   display: flex;
   flex-direction: column;
   border-radius: var(--varRadiusCard);
   transition: all 0.2s ease;
-  width: auto;
-  height: var(--varHeightModal);
+  max-width: 80vw;
+  max-height: 80vh;
 }
 
 .card-body-modal {
@@ -43,6 +42,10 @@
 
 .modal-body-gallery img {
   width: 300px;
+  height: auto;
+  object-fit: contain;
+}
+.modal-body-gallery {
 }
 
 .card-curso-description {
@@ -60,10 +63,11 @@
   display: grid;
   grid-template-columns: 1fr 1.7fr;
   border-radius: var(--varRadiusCard);
+  grid-template-columns: 1fr;
 }
 
 .modal-content-curso {
-  width: 330px;
+  width: 270px;
 }
 
 .modal-content-product {
@@ -80,12 +84,16 @@
 .img-curso {
   height: 100%;
   object-fit: cover;
+  transition: all 0.3s ease;
+  will-change: all;
+}
+.img-curso:hover {
+  scale: 1.03;
 }
 
 .carousel-img-modal {
-  /* object-fit: contain; */
   height: var(--varHeightModal);
-  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
+  border-radius: var(--varRadiusCard);
 }
 
 .modal-header {
@@ -118,7 +126,6 @@
 
 .close-button-modal:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  /* color: rgb(61, 61, 61); */
 }
 
 .modal-footer {
@@ -159,7 +166,7 @@
 
 @media (min-width: 768px) {
   .modal-content-curso {
-    width: 500px;
+    max-width: 80wv;
   }
   .modal-body-gallery img {
     width: 400px;

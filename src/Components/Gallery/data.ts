@@ -1,6 +1,3 @@
-import img01 from "../../assets/Fotos/Galeria/IMG-20241121-WA0011.jpg";
-import img02 from "../../assets/Fotos/Galeria/IMG-20241121-WA0014.jpg";
-import img03 from "../../assets/Fotos/Galeria/IMG-20241121-WA0018.jpg";
 import img04 from "../../assets/Fotos/Mate/IMG-20241121-WA0022.jpg";
 import img05 from "../../assets/Fotos/Galeria/IMG-20241121-WA0027.jpg";
 import img06 from "../../assets/Fotos/Galeria/IMG-20241121-WA0028.jpg";
@@ -30,9 +27,6 @@ export const dataGalleryImages: ImagesProps[] = [
   {src: img10},
   {src: img11},
   {src: img12},
-  {src: img01},
-  {src: img02},
-  {src: img03},
   {src: img04},
   {src: img05},
   {src: img13},

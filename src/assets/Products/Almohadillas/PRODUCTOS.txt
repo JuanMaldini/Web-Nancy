@@ -1,0 +1,14 @@
+PRODUCTOS
+
+Título = Almohadillas
+
+Tag = almohadillas terapéuticas
+
+Precio = 10 mil
+
+Descripción general= Están confeccionadas a mano , rellenas de semillas, flores de lavanda y aceites esenciales 
+Sus medidas son de 38 cm de largo X 12 cm de ancho 
+Su peso es de 550 grs 
+Diseñadas con propósito terapéutico para tratar dolores - inflamación- contractura - relajación 
+Ideales para usar en cualquier zona del cuerpo
+

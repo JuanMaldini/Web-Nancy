@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Navbar from "./Components/Navbar/Navbar";
 import Description from "./Components/Description/Description";
-import CursosArea from "./Components/Cursos/CursosArea";
+import CursosArea from "./Components/Cursos/TallerArea";
 import ProductsArea from "./Components/Products/ProductsArea";
 import GalleryArea from "./Components/Gallery/GalleryArea";
 import Contact from "./Components/Contact/Contact";

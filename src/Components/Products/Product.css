@@ -26,7 +26,9 @@
 
 .carousel {
   background-color: var(--varColWhite);
-  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
+  border-radius: var(--varRadiusCard);
+  align-self: center;
+  width: 100%;
 }
 
 .card-body-modal {
@@ -62,7 +64,7 @@
 
 .card-product-description{
   grid-area: card-product-description;
-  padding: 0px 10px 10px 10px;
+  padding: 0px 16px 16px 16px;
 }
 
 .card-body-modal{
@@ -89,22 +91,24 @@
   flex-direction: column;
   border-radius: var(--varRadiusCard);
   transition: all 0.2s ease;
-  width: var(--varSizeX);
-  height: 100%;
+  width: 180px;
+  height: auto;
 }
 
 .carousel-inner {
   background-color: var(--varColWhite3);
-  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
-  height: var(--varSizeY);
-  width: var(--varSizeX);
+  border-radius: var(--varRadiusCard) ;
+  max-height: 30vh;
+  max-width: 80wv;
 }
 
 .carousel-img {
-  height: auto;
   width: 100%;
-  object-fit: cover;
-  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
+  transition: all 0.3s ease;
+}
+
+.carousel-img:hover {
+  scale: 1.03;
 }
 
 .cardlinks {
@@ -112,10 +116,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 8px;
+  gap: var(--varGapItem);
   padding: 0px 10px 10px 10px;
   width: 100%;
-  justify-content: space-between;
   background-color: var(--varColWhite3);
   border-radius: 0px 0px var(--varRadiusCard) var(--varRadiusCard);
 }
@@ -151,13 +154,20 @@
 .carousel-control-prev,
 .carousel-control-next {
   border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
-  width: 50%;
+  width: 20%;
+  display: flex;
+  background: solid;
 }
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  height: 100%;
-  filter: invert(1);
+
+.carousel-control-prev-icon-F,
+.carousel-control-next-icon-F {
+  font-size: 50px;
+  transition: all 0.3s ease;
+  color: black; /* Cambia 'black' al color que desees */
+  background-color: solid; /* Asegura que el fondo sigue siendo transparente */
+  color: white;
 }
+
 
 @media (min-width: 768px) {
 }

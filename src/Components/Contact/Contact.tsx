@@ -20,7 +20,7 @@ export default function Contact({}: Props) {
               </div>
 
               <div className="feature col">
-                  <h3 className="fs-2 text-body-emphasis">Featured title</h3>
+                  <h3 className="fs-2 text-body-emphasis">Hablemos!</h3>
                   <p>{contactText}</p>
                   <Button destination={getWhatsappContact()} buttonClass="Class1" textButton="Whatsapp"/>
               </div>
