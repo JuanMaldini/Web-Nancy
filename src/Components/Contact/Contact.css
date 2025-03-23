@@ -1,26 +1,108 @@
-.bodyContactSection{
-    padding: 0px;
-    margin: 0px;
-    background-color: var(--varColWhite3);
-    padding: 32px 16px;
+.bodyContactSection {
+  padding: 50px 20px;
+  margin: 0;
+  background-color: var(--varColWhite3);
+  background-image: linear-gradient(135deg, var(--varColWhite3) 0%, #fff5f2 100%);
 }
 
 .bodyContact {
-    padding: 16px 32px;
-    border-radius: 32px;
-    background-color: var(--varColWhite3);
-    box-shadow: 0px 0px 16px var(--varColWhiteH);
+  padding: 40px;
+  border-radius: 32px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.contactImg{
-    display: flex;
-    justify-content: end;
+.contact-title {
+  color: var(--varCol03);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.bodyContactItem{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+.contactImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.contactImg img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.contactImg img:hover {
+  transform: scale(1.05);
+}
+
+.bodyContactItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contact-content {
+  max-width: 500px;
+}
+
+.contact-subtitle {
+  font-size: 1.5rem;
+  color: var(--varCol03);
+  margin-bottom: 15px;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--varCol02);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(215, 108, 76, 0.2);
+}
+
+.contact-button:hover {
+  background-color: var(--varCol03);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(215, 108, 76, 0.3);
+}
+
+.contact-button svg {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .bodyContact {
+    padding: 30px 20px;
+  }
+
+  .bodyContactItem {
+    flex-direction: column;
+  }
+
+  .contactImg {
+    order: -1;
+  }
+
+  .contact-content {
+    text-align: center;
+  }
+}
+

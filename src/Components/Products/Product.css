@@ -4,179 +4,176 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 32px 0px;
+  padding: 50px 0;
 }
 
 .productsAreaProd {
   display: flex;
   flex-wrap: wrap;
-  align-items: end;
+  align-items: stretch;
   justify-content: center;
-  margin: 32px 0px;
+  margin: 32px 0;
+  gap: 25px;
 }
 
-.text-center {
-  margin: 8px 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  align-content: center;
+.products-title {
+  color: var(--varCol03);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.carousel {
-  background-color: var(--varColWhite);
-  border-radius: var(--varRadiusCard);
-  align-self: center;
-  width: 100%;
-}
-
-.card-body-modal {
-  cursor: pointer;
-  display: grid;
-  grid-template-rows: 0.8fr 1.3fr 0.8fr 1fr;
-  grid-template-areas:
-    "card-title"
-    "tagClass"
-    "priceClass"
-    "cardlinks";
-  transition: all 0.3s ease;
-  height: 100%;
-  border: none;
-}
-
-.card-body-pruduct{
-  cursor: pointer;
-  display: grid;
-  grid-template-rows: 0.8fr 1.3fr 0.8fr 1fr;
-  grid-template-areas:
-    "card-title"
-    "tagClass"
-    "priceClass"
-    "cardlinks";
-  transition: all 0.3s ease;
-  height: 100%;
-  border: none;
-  background-color: var(--varColWhite3);
-  border-radius: 0px 0px var(--varRadiusCard) var(--varRadiusCard);
-
-}
-
-.card-product-description{
-  grid-area: card-product-description;
-  padding: 0px 16px 16px 16px;
-}
-
-.card-body-modal{
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  grid-template-rows: 0.8fr.7fr 1.3fr 0.8fr 1fr;
-  grid-template-areas:
-    "card-title"
-    "tagClass"
-    "priceClass"
-    "card-product-description"
-    "cardlinks";
-  transition: all 0.3s ease;
-  background-color: var(--varColWhite3);
-  height: 100%;
-  border: none;
-
+.products-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .cardProduct {
-  margin: var(--varGapItem);
+  margin: 0;
   display: flex;
   flex-direction: column;
   border-radius: var(--varRadiusCard);
-  transition: all 0.2s ease;
-  width: 180px;
-  height: auto;
+  transition: all 0.3s ease;
+  width: 220px;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cardProduct:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-inner {
   background-color: var(--varColWhite3);
-  border-radius: var(--varRadiusCard) ;
-  max-height: 30vh;
-  max-width: 80wv;
+  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0 0;
+  height: 220px;
+  overflow: hidden;
 }
 
 .carousel-img {
   width: 100%;
-  transition: all 0.3s ease;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
 .carousel-img:hover {
-  scale: 1.03;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.cardlinks {
-  grid-area: cardlinks;
+.card-body-pruduct {
+  cursor: pointer;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--varGapItem);
-  padding: 0px 10px 10px 10px;
-  width: 100%;
+  flex-direction: column;
+  height: 100%;
+  border: none;
   background-color: var(--varColWhite3);
-  border-radius: 0px 0px var(--varRadiusCard) var(--varRadiusCard);
-}
-
-.productButton {
-  justify-self: center;
+  border-radius: 0 0 var(--varRadiusCard) var(--varRadiusCard);
+  padding: 15px;
 }
 
 .card-title {
-  padding: 10px 0px 0px 10px;
-  font-size: large;
-  grid-area: card-title;
-}
-
-.tagClass,
-.priceClass {
-  padding: 0px 10px;
-  margin: 0px;
-}
-
-.priceClass {
-  grid-area: priceClass;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--varCol03);
 }
 
 .tagClass {
   display: flex;
   flex-wrap: wrap;
-  align-content: start;
-  gap: var(--varGapTag);
-  grid-area: tagClass;
+  gap: 6px;
+  margin: 8px 0;
 }
 
+.Class2 {
+  background-color: var(--varCol02-B);
+  color: var(--varCol03);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.priceClass {
+  font-weight: 600;
+  color: var(--varCol03);
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.cardlinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.productButton {
+  padding: 8px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Botones del carrusel que ocupan todo el alto */
 .carousel-control-prev,
 .carousel-control-next {
-  border-radius: var(--varRadiusCard) var(--varRadiusCard) 0px 0px;
-  width: 20%;
-  display: flex;
-  background: solid;
+  width: 15%;
+  opacity: 0.7;
+  height: 100%;
 }
 
 .carousel-control-prev-icon-F,
 .carousel-control-next-icon-F {
-  font-size: 50px;
-  transition: all 0.3s ease;
-  color: black; /* Cambia 'black' al color que desees */
-  background-color: solid; /* Asegura que el fondo sigue siendo transparente */
-  color: white;
+  font-size: 24px;
+  color: var(--varCol03);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 0;
 }
 
+@media (min-width: 390px) {
+  .cardProduct {
+    width: 240px;
+  }
+}
 
 @media (min-width: 768px) {
+  .cardProduct {
+    width: 260px;
+  }
+
+  .carousel-inner {
+    height: 240px;
+  }
 }
 
 @media (min-width: 1080px) {
+  .cardProduct {
+    width: 280px;
+  }
+
+  .carousel-inner {
+    height: 260px;
+  }
 }
 
 @media (min-width: 1440px) {
+  .cardProduct {
+    width: 300px;
+  }
+
+  .carousel-inner {
+    height: 280px;
+  }
 }
 
-@media (min-width: 1920px) {
-}

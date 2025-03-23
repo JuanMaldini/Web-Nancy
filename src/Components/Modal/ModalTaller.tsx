@@ -1,163 +1,113 @@
-import React, { useState } from "react";
-import "./Modal.css"; // Puedes añadir estilos básicos aquí.
-import "../A-Helpers/Helper.css";
-import { getWhatsappContactTaller } from "../A-Helpers/Helper";
-import { FaWhatsapp } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
-import ModalGallery from "./ModalGallery";
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import { FaWhatsapp } from "react-icons/fa"
+import { IoClose } from "react-icons/io5"
+import { getWhatsappContactTaller } from "../A-Helpers/Helper"
+import ModalGallery from "./ModalGallery"
+import Carousel from "../Carousel"
 
 interface ModalProps {
-  label: string;
-  tallerDescriptionTag: string;
-  tallerDescriptionGeneral?: string;
-  image01: string;
-  image02?: string;
-  image03?: string;
-  image04?: string;
-  image05?: string;
-  image06?: string;
-  image07?: string;
-  image08?: string;
-  image09?: string;
-  image010?: string;
-  price: string;
-  onClose?: () => void;
+  label: string
+  tallerDescriptionTag: string
+  tallerDescriptionGeneral?: string
+  images: string[]
+  price: string
+  onClose?: () => void
 }
 
-const ModalTaller: React.FC<ModalProps> = ({
-  label,
-  tallerDescriptionTag,
-  tallerDescriptionGeneral,
-  image01,
-  image02,
-  image03,
-  image04,
-  image05,
-  image06,
-  image07,
-  image08,
-  image09,
-  image010,
-  price,
-  onClose,
-}) => {
+const ModalTaller = ({ label, tallerDescriptionTag, tallerDescriptionGeneral, images, price, onClose }: ModalProps) => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
-  const images = [ image01, image02, image03, image04, image05, image06, image07, image08, image09, image010, ].filter(Boolean);
+  // Función para detener la propagación de eventos
+  const handleModalClick = (e: React.MouseEvent) => {
+    e.stopPropagation()
+  }
 
   return (
-    <div className="modal" onClick={onClose}>
-      <div className="modal-content-curso" onClick={(e) => e.stopPropagation()}>
-        <button className="close-button-modal" onClick={onClose}>
-          <IoClose />
+    <div
+      className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-[1000] overflow-hidden"
+      onClick={onClose}
+    >
+      <div className="relative w-[90%] max-w-[550px]" onClick={handleModalClick}>
+        <button
+          className="modal-close-btn"
+          onClick={(e) => {
+            e.stopPropagation()
+            onClose && onClose()
+          }}
+        >
+          <IoClose size={24} className="text-gray-700" />
         </button>
 
-        <div className="cardCurso-modal cardGeneral">
-          <div className="cardCursosImg">
-
-            <div
-              id={`carouselExample-modal-${label.replace(/\s+/g, "")}`}
-              className="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div className="carousel-inner">
-                {images.map((item, index) => (
-                  <div
-                    key={index}
-                    className={`carousel-item ${index === 0 ? "active" : ""}`}
-                  >
-                    <img
-                      src={item}
-                      className="carousel-img img-curso0"
-                      alt={`Image ${index + 1}`}
-                      onClick={() => setSelectedImage(item)}
-
-                    />
-                  </div>
-                ))}
-              </div>
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target={`#carouselExample-modal-${label.replace(
-                  /\s+/g,
-                  ""
-                )}`}
-                data-bs-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon-F"
-                  aria-hidden="true"
-                >
-                  {"<"}
-                </span>
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target={`#carouselExample-modal-${label.replace(
-                  /\s+/g,
-                  ""
-                )}`}
-                data-bs-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon-F"
-                  aria-hidden="true"
-                >
-                  {">"}
-                </span>
-                <span className="visually-hidden">Next</span>
-              </button>
-            </div>
+        <div className="flex flex-col rounded-lg overflow-hidden shadow-xl bg-white">
+          <div className="relative group">
+            <Carousel
+              images={images}
+              onImageClick={(image) => setSelectedImage(image)}
+              height="h-[320px]"
+              showExpandIcon={false}
+              showIndicators={true}
+              showControls={true}
+              showCounter={true}
+              fullHeightControls={true}
+              noHoverEffect={true}
+            />
           </div>
-          <div className="cardCursosData">
-            <div className="card-bodyCurso">
-              <div>
-                <div className="card-titleCurso">{label}</div>
-              </div>
-              <div className="tagCurso">
-                {tallerDescriptionTag.split(" ").map((word, index) => (
-                  <div key={index} className="Class2">
-                    {word}
-                  </div>
-                ))}
-              </div>
-              <div className="card-curso-description">
-                <div>{tallerDescriptionGeneral}</div>
-              </div>
-              <div className="priceClassCurso">
-                <div>{price}</div>
-                {/* <div>$ {price} ARS</div> */}
-              </div>
-              <div className="cardlinksCurso">
-                <a
-                  className="Class1"
-                  href={getWhatsappContactTaller(label)}
-                  target="_blank"
+
+          <div className="p-6 flex flex-col gap-3">
+            <div>
+              <h2 className="text-xl font-medium mb-2 text-[var(--varCol03)]">{label}</h2>
+            </div>
+
+            <div className="flex flex-wrap gap-1.5">
+              {tallerDescriptionTag.split(" ").map((word, index) => (
+                <div
+                  key={index}
+                  className="bg-[var(--varCol02-B)] text-[var(--varCol03)] px-3 py-1 rounded-full text-sm"
                 >
-                  Contáctame!
-                </a>
-                <a
-                  className="whatsappIcon"
-                  href={getWhatsappContactTaller(label)}
-                  target="_blank"
-                >
-                  <FaWhatsapp className="" style={{ color: "#25D366" }} />
-                </a>
+                  {word}
+                </div>
+              ))}
+            </div>
+
+            <div className="leading-relaxed text-gray-700 my-2 text-base">
+              <p>{tallerDescriptionGeneral}</p>
+            </div>
+
+            <div className="flex items-center justify-between gap-4 mt-3">
+              <a
+                className="flex items-center gap-2 bg-[var(--varCol02)] text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[var(--varCol03)] hover:shadow-md"
+                href={getWhatsappContactTaller(label)}
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp <FaWhatsapp />
+              </a>
+
+              <div className="text-[var(--varCol03)] text-base">
+                <p className="m-0">{price}</p>
               </div>
             </div>
           </div>
         </div>
-        {selectedImage && (
-          <ModalGallery
-            image01={selectedImage}
-            onClose={() => setSelectedImage(null)}
-          />
-        )}
       </div>
-    </div>
-  );
-};
 
-export default ModalTaller;
+      {selectedImage && (
+        <ModalGallery
+          image={selectedImage}
+          images={images}
+          onClose={(e) => {
+            e?.stopPropagation()
+            setSelectedImage(null)
+          }}
+        />
+      )}
+    </div>
+  )
+}
+
+export default ModalTaller
+

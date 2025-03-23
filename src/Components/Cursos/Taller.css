@@ -5,9 +5,19 @@
   height: auto;
   border-radius: var(--varRadiusCard);
   margin: var(--varGapItem);
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.cardCurso:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .cardCursosImg {
+  height: 100%;
+  overflow: hidden;
 }
 
 .img-curso {
@@ -16,6 +26,11 @@
   height: 100%;
   width: 100%;
   border-radius: var(--varRadiusCard) 0px 0px var(--varRadiusCard);
+  transition: transform 0.5s ease;
+}
+
+.cardCurso:hover .img-curso {
+  transform: scale(1.1);
 }
 
 .card-curso-description,
@@ -24,16 +39,24 @@
   display: flex;
 }
 
-.priceClassCurso p {
-  display: flex;
+.card-titleCurso {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--varCol03);
+}
 
-  align-items: center;
+.priceClassCurso {
+  font-weight: 600;
+  color: var(--varCol03);
+  margin: 10px 0;
+  font-size: 1.1rem;
 }
 
 .cardCursosData {
-  display: grid;
+  display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 20px;
   background-color: var(--varColWhite3);
   border-radius: 0px var(--varRadiusCard) var(--varRadiusCard) 0px;
 }
@@ -43,24 +66,45 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: start;
-  gap: var(--varGapTag);
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .cardlinksCurso {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
+  gap: 15px;
+  margin-top: 15px;
 }
 
-.cardlinksCurso p {
-  align-self: center;
+.CursosButton {
+  padding: 8px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .card-bodyCurso {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
+}
+
+.talleres-title {
+  color: var(--varCol03);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.talleres-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 390px) {
@@ -73,14 +117,23 @@
     width: 350px;
   }
 }
-@media (min-width: 430px) {
-}
 @media (min-width: 768px) {
   .cardCurso {
     width: 500px;
   }
+
+  .card-titleCurso {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1080px) {
+  .cardCurso {
+    width: 600px;
+  }
 }
 @media (min-width: 1440px) {
+  .cardCurso {
+    width: 700px;
+  }
 }
-@media (min-width: 1920px) {
-}
+

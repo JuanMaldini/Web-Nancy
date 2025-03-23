@@ -1,42 +1,152 @@
-import "./Navbar.css";
-import "../A-Helpers/Helper.css";
+"use client"
 
-type Props = {};
-import Logo from "../../assets/Icons/Logo/Logo01.png";
-import Corazon from "../../assets/Icons/Logo/Corazon.png";
+import { useState, useEffect, useRef } from "react"
+import { FaBars, FaTimes } from "react-icons/fa"
 
-export default function Navbar({}: Props) {
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [showTitle, setShowTitle] = useState(false)
+  const logoSectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (logoSectionRef.current) {
+        // Obtener la posición del elemento del logo
+        const logoRect = logoSectionRef.current.getBoundingClientRect()
+
+        // Si la parte inferior del logo está por encima de la ventana, mostrar el título
+        if (logoRect.bottom < 0) {
+          setShowTitle(true)
+        } else {
+          setShowTitle(false)
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
-    <nav id="Navbar" className="navbarA navbar-expand-md navbar-dark d-flex flex-column" aria-label="Tenth navbar example">
-      <div className="navbarUp">
-        <ul className="list-unstyled d-flex flex-column text-center">
-          <li>
-            <img src={Logo} alt="Logo Web" width="250"></img>
-            <h1 className="fs-2 titleNav1">Breathe Smell Relax</h1>
-          </li>
-        </ul>
-      </div>
-      <div className="containerNav container-fluid fs-5">
-
-        <img className="Corazon" src={Corazon} alt="Logo Web" width="30" />
-        
-        <div className="titleNav2">
-          <p>Breathe Smell Relax</p>
-        </div>
-
-        <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
-          <ul className="spacerNav navbar-nav text-end">
-            <li className="nav-item nav-link"><a className="linkUnderline" href="#Navbar">Inicio</a></li>
-            <li className="nav-item nav-link"><a className="linkUnderline" href="#CursosArea">Cursos</a></li>
-            <li className="nav-item nav-link"><a className="linkUnderline" href="#ProductsArea">Productos</a></li>
-            <li className="nav-item nav-link"><a className="linkUnderline" href="#GalleryArea">Galería</a></li>
-            <li className="nav-item nav-link"><a className="linkUnderline" href="#Contact">Contacto</a></li>
-          </ul>
+    <>
+      {/* Logo y título - esta parte NO es sticky */}
+      <div id="Navbar" className="bg-[var(--varColWhite3)] shadow-sm" ref={logoSectionRef}>
+        <div className="flex flex-col items-center py-4">
+          <img src="/placeholder.svg?height=250&width=250" alt="Logo Web" className="w-[250px]" />
+          <h1 className="text-2xl text-[var(--varCol03)] mt-2">Breathe Smell Relax</h1>
         </div>
       </div>
-    </nav>
-  );
+
+      {/* Barra de navegación - esta parte SÍ es sticky */}
+      <div className="sticky top-0 z-50 bg-[var(--varColWhite3)] shadow-sm">
+        <div className="container mx-auto px-4 flex items-center justify-between py-3">
+          {/* Logo pequeño y título para móviles */}
+          <div className="flex items-center">
+            <img src="/placeholder.svg?height=30&width=30" alt="Logo Web" className="w-[30px]" />
+
+            {/* Título que aparece con fade cuando se hace scroll */}
+            <p
+              className={`ml-3 font-semibold text-[var(--varCol03)] transition-opacity duration-300 ${
+                showTitle ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              Breathe Smell Relax
+            </p>
+          </div>
+
+          {/* Menú de navegación para pantallas grandes */}
+          <div className="hidden md:flex">
+            <ul className="flex space-x-8">
+              <li>
+                <a className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500" href="#Navbar">
+                  Inicio
+                </a>
+              </li>
+              <li>
+                <a className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500" href="#CursosArea">
+                  Talleres
+                </a>
+              </li>
+              <li>
+                <a className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500" href="#ProductsArea">
+                  Productos
+                </a>
+              </li>
+              <li>
+                <a className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500" href="#GalleryArea">
+                  Galería
+                </a>
+              </li>
+              <li>
+                <a className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500" href="#Contact">
+                  Contacto
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Botón de menú para móviles */}
+          <button className="md:hidden text-black focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
+
+        {/* Menú móvil desplegable */}
+        {isOpen && (
+          <div className="md:hidden">
+            <ul className="flex flex-col text-right bg-[var(--varColWhite3)] shadow-md rounded-b-lg p-4">
+              <li className="py-3 border-b border-gray-100">
+                <a
+                  className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500"
+                  href="#Navbar"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Inicio
+                </a>
+              </li>
+              <li className="py-3 border-b border-gray-100">
+                <a
+                  className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500"
+                  href="#CursosArea"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Talleres
+                </a>
+              </li>
+              <li className="py-3 border-b border-gray-100">
+                <a
+                  className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500"
+                  href="#ProductsArea"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Productos
+                </a>
+              </li>
+              <li className="py-3 border-b border-gray-100">
+                <a
+                  className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500"
+                  href="#GalleryArea"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Galería
+                </a>
+              </li>
+              <li className="py-3">
+                <a
+                  className="text-[#e60d0d] transition-all duration-300 hover:text-gray-500"
+                  href="#Contact"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Contacto
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+    </>
+  )
 }
+

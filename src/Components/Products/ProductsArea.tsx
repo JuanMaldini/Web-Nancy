@@ -1,56 +1,55 @@
-import Product from "./Product.tsx";
-import "./Product.css";
-import Spacebar from "../Spacebar/Spacebar.tsx";
-import dataProducts from "./data.ts";
-import { productsText } from "../A-Helpers/Helper.tsx";
-import { useState } from "react";
-import ModalProduct from "../Modal/ModalProduct.tsx";
+"use client"
 
-type Props = {};
+import { useState } from "react"
+import Product from "./Product"
+import Spacebar from "../Spacebar/Spacebar"
+import { productsText } from "../A-Helpers/Helper"
+import ModalProduct from "../Modal/ModalProduct"
 
-export default function ProductsArea({}: Props) {
+export default function ProductsArea() {
   const [selectedProduct, setSelectedProduct] = useState<{
-    label: string;
-    productDescriptionTag: string;
-    productDescriptionGeneral?: string;
-    image01: string;
-    image02?: string;
-    image03?: string;
-    image04?: string;
-    image05?: string;
-    image06?: string;
-    image07?: string;
-    image08?: string;
-    image09?: string;
-    image010?: string;
-    price: string;
-  } | null>(null);
+    label: string
+    productDescriptionTag: string
+    productDescriptionGeneral?: string
+    images: string[]
+    price: string
+  } | null>(null)
+
+  // Datos de productos con placeholders (limitados a 3 imágenes)
+  const placeholderProducts = [
+    {
+      label: "Almohadillas",
+      productDescriptionGeneral:
+        "Están confeccionadas a mano, rellenas de semillas, flores de lavanda y aceites esenciales; miden 38 cm de largo x 12 cm de ancho, pesan 550 grs, y están diseñadas con propósito terapéutico para tratar dolores, inflamación, contracturas y relajación, siendo ideales para usar en cualquier zona del cuerpo.",
+      productDescriptionTag: "almohadillas terapéutico",
+      images: [
+        "/placeholder.svg?height=300&width=400",
+        "/placeholder.svg?height=310&width=410",
+        "/placeholder.svg?height=320&width=420",
+      ],
+      price: "$10.000",
+    },
+  ]
 
   return (
-    <div id="ProductsArea" className="productsArea">
-      <div className="spacingArea">
-        <div className="text-center">
-          <p className="fs-2">Productos</p>
-          <p className="fs-5">{productsText}</p>
+    <div
+      id="ProductsArea"
+      className="bg-[var(--varColWhite3)] flex flex-col justify-center items-center py-16 min-h-screen"
+    >
+      <div className="spacingArea max-w-6xl w-full">
+        <div className="text-center mb-8">
+          <p className="text-2xl font-medium text-[var(--varCol03)] mb-2">Productos</p>
+          <p className="text-base text-gray-600 max-w-xl mx-auto">{productsText}</p>
         </div>
         <Spacebar />
-        <div className="productsAreaProd">
-          {dataProducts.map((item, index) => (
+        <div className="flex flex-wrap items-stretch justify-center my-10 gap-8">
+          {placeholderProducts.map((item, index) => (
             <Product
               key={index}
               label={item.label}
               productDescriptionTag={item.productDescriptionTag}
               productDescriptionGeneral={item.productDescriptionGeneral}
-              image01={item.image01}
-              image02={item.image02}
-              image03={item.image03}
-              image04={item.image04}
-              image05={item.image05}
-              image06={item.image06}
-              image07={item.image07}
-              image08={item.image08}
-              image09={item.image09}
-              image010={item.image010}
+              images={item.images}
               price={item.price}
               onClick={() => setSelectedProduct(item)}
             />
@@ -61,21 +60,13 @@ export default function ProductsArea({}: Props) {
             label={selectedProduct.label}
             productDescriptionTag={selectedProduct.productDescriptionTag}
             productDescriptionGeneral={selectedProduct.productDescriptionGeneral}
-            image01={selectedProduct.image01}
-            image02={selectedProduct.image02}
-            image03={selectedProduct.image03}
-            image04={selectedProduct.image04}
-            image05={selectedProduct.image05}
-            image06={selectedProduct.image06}
-            image07={selectedProduct.image07}
-            image08={selectedProduct.image08}
-            image09={selectedProduct.image09}
-            image010={selectedProduct.image010}
+            images={selectedProduct.images}
             price={selectedProduct.price}
             onClose={() => setSelectedProduct(null)}
           />
         )}
       </div>
     </div>
-  );
+  )
 }
+

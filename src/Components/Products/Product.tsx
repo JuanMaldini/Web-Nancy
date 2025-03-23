@@ -1,105 +1,76 @@
-import "./Product.css";
-import "../A-Helpers/Helper.css";
-import { getWhatsappContactProduct } from "../A-Helpers/Helper.tsx";
-import { FaWhatsapp } from "react-icons/fa";
-import { useState } from "react";
+"use client"
+
+import { FaWhatsapp } from "react-icons/fa"
+import { getWhatsappContactProduct } from "../A-Helpers/Helper"
+import Carousel from "../Carousel"
 
 export type ProductProps = {
-  label: string;
-  productDescriptionTag: string;
-  productDescriptionGeneral?: string;
-  price: string;
-  image01: string;
-  image02?: string;
-  image03?: string;
-  image04?: string;
-  image05?: string;
-  image06?: string;
-  image07?: string;
-  image08?: string;
-  image09?: string;
-  image010?: string;
-  onClick?: () => void;
-};
+  label: string
+  productDescriptionTag: string
+  productDescriptionGeneral?: string
+  price: string
+  images: string[]
+  onClick?: () => void
+}
 
 export default function Product({
   label,
   productDescriptionTag,
-  // productDescriptionGeneral,
+  productDescriptionGeneral,
   price,
-  image01,
-  image02,
-  image03,
-  image04,
-  image05,
-  image06,
-  image07,
-  image08,
-  image09,
-  image010,
+  images,
   onClick,
 }: ProductProps) {
-  const images = [ image01, image02, image03, image04, image05, image06, image07, image08, image09, image010 ].filter((img) => img && img.trim() !== "");
-
-  const [selectedProduct, setSelectedProduct] = useState<{
-    label: string;
-    productDescriptionTag: string;
-    productDescriptionGeneral?: string;
-    price: string;
-    image01: string;
-    image02?: string;
-    image03?: string;
-    image04?: string;
-    image05?: string;
-    image06?: string;
-    image07?: string;
-    image08?: string;
-    image09?: string;
-    image010?: string;
-  } | null>(null);
-
   return (
-      <div className="cardProduct cardGeneral">
+    <div className="w-[220px] sm:w-[240px] md:w-[260px] lg:w-[280px] xl:w-[300px] flex flex-col rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white cardGeneral">
+      <Carousel
+        images={images}
+        onImageClick={onClick}
+        showIndicators={true}
+        showControls={true}
+        showCounter={false}
+        fullHeightControls={true}
+        noHoverEffect={true}
+      />
 
-        <div id={`carouselExample-${label.replace(/\s+/g, "")}`} className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-inner">
-            {images.map((item, index) => (
-              <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
-                <img src={item} className="carousel-img" alt={`Image ${index + 1}`} onClick={onClick}/>
-              </div>
-            ))}
-          </div>
-          <button className="carousel-control-prev" type="button" data-bs-target={`#carouselExample-${label.replace(/\s+/g, "")}`} data-bs-slide="prev">
-            <span className="carousel-control-prev-icon-F" aria-hidden="true">{"<"}</span> 
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target={`#carouselExample-${label.replace(/\s+/g, "")}`} data-bs-slide="next">
-            <span className="carousel-control-next-icon-F" aria-hidden="true">{">"}</span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
-
-        <div className="card-body-pruduct" onClick={onClick}>
+      <div className="cursor-pointer flex flex-col h-full border-none bg-white p-5" onClick={onClick}>
         <div>
-          <h4 className="card-title">{label}</h4>
+          <h4 className="font-medium text-lg mb-2 text-[var(--varCol03)]">{label}</h4>
         </div>
 
-          <div className="tagClass">
-            {productDescriptionTag.split(" ").map((word, index) => (
-              <div key={index} className="Class2">{word}</div>
-            ))}
-          </div>
+        <div className="flex flex-wrap gap-1.5 my-2">
+          {productDescriptionTag.split(" ").map((word, index) => (
+            <div key={index} className="bg-[var(--varCol02-B)] text-[var(--varCol03)] px-3 py-1 rounded-full text-xs">
+              {word}
+            </div>
+          ))}
+        </div>
 
-          <div className="priceClass">
-            <p className="m-0">{price} ARS</p>
-          </div>
+        <div className="text-sm text-gray-600 mb-2">
+          {productDescriptionGeneral
+            ? productDescriptionGeneral.substring(0, 80) + "..."
+            : "Producto artesanal de alta calidad..."}
+        </div>
 
-          <div className="cardlinks">
-            <div className="Class1 productButton">Ver más</div>
-            <a className="whatsappIcon" href={getWhatsappContactProduct(label)} target="_blank"><FaWhatsapp className="" style={{ color: "#25D366" }} /></a>
-          </div>
+        <div className="flex items-center justify-between gap-3 mt-auto pt-3">
+          <button className="bg-[var(--varCol02)] text-white px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[var(--varCol03)] hover:shadow-md">
+            Ver más
+          </button>
 
+          <div className="flex items-center gap-2">
+            <p className="text-[var(--varCol03)] text-base m-0">{price}</p>
+            <a
+              className="flex text-[24px] text-[#25D366] transition-all hover:scale-110"
+              href={getWhatsappContactProduct(label)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaWhatsapp />
+            </a>
+          </div>
         </div>
       </div>
-  );
+    </div>
+  )
 }
+

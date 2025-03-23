@@ -1,55 +1,55 @@
-import dataTaller from "./dataTaller.ts";
-import CardTaller from "./CardTaller.tsx";
-import Spacebar from "../Spacebar/Spacebar.tsx";
-import { talleresText } from "../A-Helpers/Helper.tsx";
-import { useState } from "react";
-import ModalTaller from "../Modal/ModalTaller.tsx";
+"use client"
 
-type Props = {};
+import { useState } from "react"
+import CardTaller from "./CardTaller"
+import Spacebar from "../Spacebar/Spacebar"
+import { talleresText } from "../A-Helpers/Helper"
+import ModalTaller from "../Modal/ModalTaller"
 
-export default function CursosArea({}: Props) {
+export default function CursosArea() {
   const [selectedTaller, setSelectedTaller] = useState<{
-    label: string;
-    tallerDescriptionTag: string;
-    tallerDescriptionGeneral?: string;
-    image01: string;
-    image02?: string;
-    image03?: string;
-    image04?: string;
-    image05?: string;
-    image06?: string;
-    image07?: string;
-    image08?: string;
-    image09?: string;
-    image010?: string;
-    price: string;
-  } | null>(null);
+    label: string
+    tallerDescriptionTag: string
+    tallerDescriptionGeneral?: string
+    images: string[]
+    price: string
+  } | null>(null)
+
+  // Datos de talleres con placeholders (limitados a 3 imágenes)
+  const placeholderTalleres = [
+    {
+      label: "Creamos con nuestras manos",
+      tallerDescriptionTag: "manual textil decoración",
+      tallerDescriptionGeneral:
+        "Con diversos elementos dispuestos en la mesa y una guía, realizamos nuestro propio diseño; yo te muestro y enseño mi técnica, te acompaño en el proceso; son talleres presenciales de 3 horas y, al finalizar la labor, sientes satisfacción y tu creatividad se despierta para más.",
+      images: [
+        "/placeholder.svg?height=300&width=400",
+        "/placeholder.svg?height=310&width=410",
+        "/placeholder.svg?height=320&width=420",
+      ],
+      price: "$10.000 ARS",
+    },
+  ]
 
   return (
-    <div id="CursosArea" className="productsArea">
-      <div className="spacingArea">
-        <div className="text-center">
-          <p className="fs-2">Talleres</p>
-          <p className="fs-5">{talleresText}</p>
+    <div
+      id="CursosArea"
+      className="bg-[var(--varColWhite3)] flex flex-col justify-center items-center py-16 min-h-screen"
+    >
+      <div className="spacingArea max-w-6xl w-full">
+        <div className="text-center mb-8">
+          <p className="text-2xl font-medium text-[var(--varCol03)] mb-2">Talleres</p>
+          <p className="text-base text-gray-600 max-w-xl mx-auto">{talleresText}</p>
         </div>
         <Spacebar />
-        <div className="productsAreaProd">
-          {dataTaller.map((item, index) => (
+        <div className="flex flex-wrap items-stretch justify-center my-10 gap-8">
+          {placeholderTalleres.map((item, index) => (
             <CardTaller
               key={index}
               label={item.label}
               tallerDescriptionTag={item.tallerDescriptionTag}
               tallerDescriptionGeneral={item.tallerDescriptionGeneral}
-              image01={item.image01}
-              image02={item.image02}
-              image03={item.image03}
-              image04={item.image04}
-              image05={item.image05}
-              image06={item.image06}
-              image07={item.image07}
-              image08={item.image08}
-              image09={item.image09}
-              image010={item.image010}
+              images={item.images}
               price={item.price}
               onClick={() => setSelectedTaller(item)}
             />
@@ -60,21 +60,13 @@ export default function CursosArea({}: Props) {
             label={selectedTaller.label}
             tallerDescriptionTag={selectedTaller.tallerDescriptionTag}
             tallerDescriptionGeneral={selectedTaller.tallerDescriptionGeneral}
-            image01={selectedTaller.image01}
-            image02={selectedTaller.image02}
-            image03={selectedTaller.image03}
-            image04={selectedTaller.image04}
-            image05={selectedTaller.image05}
-            image06={selectedTaller.image06}
-            image07={selectedTaller.image07}
-            image08={selectedTaller.image08}
-            image09={selectedTaller.image09}
-            image010={selectedTaller.image010}
+            images={selectedTaller.images}
             price={selectedTaller.price}
             onClose={() => setSelectedTaller(null)}
           />
         )}
       </div>
     </div>
-  );
+  )
 }
+
