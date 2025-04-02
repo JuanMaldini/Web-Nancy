@@ -1,262 +1,245 @@
 "use client"
 
-import * as React from "react"
-import useEmblaCarousel, {
-  type UseEmblaCarouselType,
-} from "embla-carousel-react"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { useState, useEffect, useCallback, useRef } from "react"
+import { ChevronLeft, ChevronRight, Play } from "lucide-react"
+import type { CarouselProps } from "@/lib/types"
+import ImageWithFallback from "@/components/ui/ImageWithFallback"
+import { isVideo } from "@/lib/utils"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+export default function Carousel({
+  images,
+  videos = [],
+  onImageClick,
+  onVideoClick,
+  onSlideChange,
+  autoplay = false,
+  interval = 5000,
+  height = "h-[220px]",
+  className = "",
+  showIndicators = true,
+  showCounter = false,
+  showControls = true,
+  showExpandIcon = false,
+  fullHeightControls = false,
+  noHoverEffect = false,
+}: CarouselProps) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({})
 
-type CarouselApi = UseEmblaCarouselType[1]
-type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
-type CarouselOptions = UseCarouselParameters[0]
-type CarouselPlugin = UseCarouselParameters[1]
+  // Combinar imágenes y videos para la navegación
+  const allMedia = [...images, ...videos]
 
-type CarouselProps = {
-  opts?: CarouselOptions
-  plugins?: CarouselPlugin
-  orientation?: "horizontal" | "vertical"
-  setApi?: (api: CarouselApi) => void
-}
-
-type CarouselContextProps = {
-  carouselRef: ReturnType<typeof useEmblaCarousel>[0]
-  api: ReturnType<typeof useEmblaCarousel>[1]
-  scrollPrev: () => void
-  scrollNext: () => void
-  canScrollPrev: boolean
-  canScrollNext: boolean
-} & CarouselProps
-
-const CarouselContext = React.createContext<CarouselContextProps | null>(null)
-
-function useCarousel() {
-  const context = React.useContext(CarouselContext)
-
-  if (!context) {
-    throw new Error("useCarousel must be used within a <Carousel />")
-  }
-
-  return context
-}
-
-const Carousel = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & CarouselProps
->(
-  (
-    {
-      orientation = "horizontal",
-      opts,
-      setApi,
-      plugins,
-      className,
-      children,
-      ...props
-    },
-    ref
-  ) => {
-    const [carouselRef, api] = useEmblaCarousel(
-      {
-        ...opts,
-        axis: orientation === "horizontal" ? "x" : "y",
-      },
-      plugins
-    )
-    const [canScrollPrev, setCanScrollPrev] = React.useState(false)
-    const [canScrollNext, setCanScrollNext] = React.useState(false)
-
-    const onSelect = React.useCallback((api: CarouselApi) => {
-      if (!api) {
-        return
-      }
-
-      setCanScrollPrev(api.canScrollPrev())
-      setCanScrollNext(api.canScrollNext())
-    }, [])
-
-    const scrollPrev = React.useCallback(() => {
-      api?.scrollPrev()
-    }, [api])
-
-    const scrollNext = React.useCallback(() => {
-      api?.scrollNext()
-    }, [api])
-
-    const handleKeyDown = React.useCallback(
-      (event: React.KeyboardEvent<HTMLDivElement>) => {
-        if (event.key === "ArrowLeft") {
-          event.preventDefault()
-          scrollPrev()
-        } else if (event.key === "ArrowRight") {
-          event.preventDefault()
-          scrollNext()
+  // Cargar los videos para generar las vistas previas
+  useEffect(() => {
+    videos.forEach((videoSrc) => {
+      if (videoRefs.current[videoSrc]) {
+        const video = videoRefs.current[videoSrc]
+        if (video) {
+          // Establecer el tiempo a 0.1 segundos para cargar el primer frame
+          video.currentTime = 0.1
         }
-      },
-      [scrollPrev, scrollNext]
-    )
-
-    React.useEffect(() => {
-      if (!api || !setApi) {
-        return
       }
+    })
+  }, [videos])
 
-      setApi(api)
-    }, [api, setApi])
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex === allMedia.length - 1 ? 0 : prevIndex + 1
+      if (onSlideChange) onSlideChange(newIndex)
+      return newIndex
+    })
+  }, [allMedia.length, onSlideChange])
 
-    React.useEffect(() => {
-      if (!api) {
-        return
-      }
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex === 0 ? allMedia.length - 1 : prevIndex - 1
+      if (onSlideChange) onSlideChange(newIndex)
+      return newIndex
+    })
+  }, [allMedia.length, onSlideChange])
 
-      onSelect(api)
-      api.on("reInit", onSelect)
-      api.on("select", onSelect)
-
-      return () => {
-        api?.off("select", onSelect)
-      }
-    }, [api, onSelect])
-
-    return (
-      <CarouselContext.Provider
-        value={{
-          carouselRef,
-          api: api,
-          opts,
-          orientation:
-            orientation || (opts?.axis === "y" ? "vertical" : "horizontal"),
-          scrollPrev,
-          scrollNext,
-          canScrollPrev,
-          canScrollNext,
-        }}
-      >
-        <div
-          ref={ref}
-          onKeyDownCapture={handleKeyDown}
-          className={cn("relative", className)}
-          role="region"
-          aria-roledescription="carousel"
-          {...props}
-        >
-          {children}
-        </div>
-      </CarouselContext.Provider>
-    )
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+    if (onSlideChange) onSlideChange(index)
   }
-)
-Carousel.displayName = "Carousel"
 
-const CarouselContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const { carouselRef, orientation } = useCarousel()
+  useEffect(() => {
+    if (autoplay) {
+      const timer = setInterval(() => {
+        nextSlide()
+      }, interval)
+
+      return () => clearInterval(timer)
+    }
+  }, [autoplay, interval, nextSlide])
+
+  // Notify parent of initial slide index
+  useEffect(() => {
+    if (onSlideChange) onSlideChange(currentIndex)
+  }, [])
+
+  if (allMedia.length === 0) return null
+
+  // Verificar si el elemento actual es un video
+  const currentMediaIsVideo = isVideo(allMedia[currentIndex])
+
+  // Manejar clic en el medio del carrusel
+  const handleCentralClick = () => {
+    const currentMedia = allMedia[currentIndex]
+
+    if (isVideo(currentMedia)) {
+      // Si es un video, llamar al manejador de videos
+      if (onVideoClick) {
+        const videoIndex = videos.indexOf(currentMedia)
+        if (videoIndex !== -1) {
+          onVideoClick(videoIndex)
+        }
+      }
+    } else {
+      // Si es una imagen, llamar al manejador de imágenes
+      if (onImageClick) {
+        const imageIndex = images.indexOf(currentMedia)
+        if (imageIndex !== -1) {
+          onImageClick(imageIndex)
+        } else {
+          onImageClick(currentIndex)
+        }
+      }
+    }
+  }
+
+  // Función para manejar la referencia del video
+  const setVideoRef = (el: HTMLVideoElement | null, videoSrc: string) => {
+    videoRefs.current[videoSrc] = el
+    return el
+  }
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
-      <div
-        ref={ref}
-        className={cn(
-          "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
-          className
-        )}
-        {...props}
-      />
+    <div className={`relative overflow-hidden bg-white ${height} ${className} w-full`}>
+      {/* Cargar videos ocultos para generar vistas previas */}
+      <div className="hidden">
+        {videos.map((videoSrc, idx) => (
+          <video
+            key={`video-preload-${idx}`}
+            ref={(el) => {
+              videoRefs.current[videoSrc] = el
+            }}
+            src={videoSrc}
+            preload="metadata"
+          />
+        ))}
+      </div>
+
+      {/* Imágenes y videos */}
+      {allMedia.map((media, index) => (
+        <div
+          key={index}
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
+            index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        >
+          {isVideo(media) ? (
+            <div className="relative w-full h-full">
+              {/* Video como fondo (solo para vista previa) */}
+              <video
+                src={media}
+                className="w-full h-full object-cover cursor-pointer"
+                onClick={() => handleCentralClick()}
+                preload="metadata"
+                muted
+                playsInline
+              />
+
+              {/* Icono de reproducción para videos */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none bg-black/20">
+                <div className="bg-white/80 rounded-full p-3 shadow-lg">
+                  <Play size={24} className="text-gray-800" />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <ImageWithFallback
+              src={media || "/placeholder.svg"}
+              fallbackSrc="/placeholder.svg?height=400&width=300"
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover cursor-pointer"
+              onClick={() => handleCentralClick()}
+            />
+          )}
+        </div>
+      ))}
+
+      {/* Indicadores (esferitas) - con manejo de overflow */}
+      {showIndicators && allMedia.length > 1 && (
+        <div className="absolute bottom-3 left-0 right-0 flex justify-center z-20 px-2 overflow-hidden">
+          <div className="flex flex-wrap justify-center gap-1.5 max-w-full">
+            {allMedia.map((media, index) => (
+              <button
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all flex-shrink-0 ${
+                  index === currentIndex ? "bg-[var(--varCol03)] w-3" : "bg-white/70"
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  goToSlide(index)
+                }}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Controles de navegación mejorados */}
+      {showControls && allMedia.length > 1 && (
+        <>
+          {/* Botón anterior - ahora con hover individual */}
+          <button
+            className="absolute top-0 left-0 z-20 h-full w-[20%] flex items-center justify-start group"
+            onClick={(e) => {
+              e.stopPropagation()
+              prevSlide()
+            }}
+          >
+            <div className="flex items-center px-2 h-full transition-all duration-300">
+              {/* Fondo que solo aparece en hover sobre este botón específico */}
+              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Icono siempre visible */}
+              <ChevronLeft size={24} className="text-white drop-shadow-md relative z-10" />
+            </div>
+          </button>
+
+          {/* Botón siguiente - ahora con hover individual */}
+          <button
+            className="absolute top-0 right-0 z-20 h-full w-[20%] flex items-center justify-end group"
+            onClick={(e) => {
+              e.stopPropagation()
+              nextSlide()
+            }}
+          >
+            <div className="flex items-center px-2 h-full transition-all duration-300">
+              {/* Fondo que solo aparece en hover sobre este botón específico */}
+              <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Icono siempre visible */}
+              <ChevronRight size={24} className="text-white drop-shadow-md relative z-10" />
+            </div>
+          </button>
+
+          {/* Área central para abrir el modal */}
+          <div
+            className="absolute top-0 left-[20%] right-[20%] h-full z-10 cursor-pointer"
+            onClick={handleCentralClick}
+          />
+        </>
+      )}
+
+      {/* Contador de imágenes */}
+      {showCounter && allMedia.length > 1 && (
+        <div className="absolute top-3 left-3 bg-black/50 text-white px-2 py-1 rounded-full text-xs z-20">
+          {currentIndex + 1} / {allMedia.length}
+        </div>
+      )}
     </div>
   )
-})
-CarouselContent.displayName = "CarouselContent"
-
-const CarouselItem = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const { orientation } = useCarousel()
-
-  return (
-    <div
-      ref={ref}
-      role="group"
-      aria-roledescription="slide"
-      className={cn(
-        "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
-        className
-      )}
-      {...props}
-    />
-  )
-})
-CarouselItem.displayName = "CarouselItem"
-
-const CarouselPrevious = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel()
-
-  return (
-    <Button
-      ref={ref}
-      variant={variant}
-      size={size}
-      className={cn(
-        "absolute  h-8 w-8 rounded-full",
-        orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
-          : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
-        className
-      )}
-      disabled={!canScrollPrev}
-      onClick={scrollPrev}
-      {...props}
-    >
-      <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
-    </Button>
-  )
-})
-CarouselPrevious.displayName = "CarouselPrevious"
-
-const CarouselNext = React.forwardRef<
-  HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollNext, canScrollNext } = useCarousel()
-
-  return (
-    <Button
-      ref={ref}
-      variant={variant}
-      size={size}
-      className={cn(
-        "absolute h-8 w-8 rounded-full",
-        orientation === "horizontal"
-          ? "-right-12 top-1/2 -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
-        className
-      )}
-      disabled={!canScrollNext}
-      onClick={scrollNext}
-      {...props}
-    >
-      <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
-    </Button>
-  )
-})
-CarouselNext.displayName = "CarouselNext"
-
-export {
-  type CarouselApi,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
 }
+
