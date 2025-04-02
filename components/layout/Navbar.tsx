@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react"
 import { FaBars, FaTimes } from "react-icons/fa"
-import ImageWithFallback from "@/components/ui/ImageWithFallback"
 import { getImage } from "@/lib/utils"
 
 export default function Navbar() {
@@ -35,12 +34,14 @@ export default function Navbar() {
       {/* Logo y título - esta parte NO es sticky */}
       <div id="Navbar" className="bg-[var(--varColWhite3)] shadow-sm" ref={logoSectionRef}>
         <div className="flex flex-col items-center py-4">
-          <ImageWithFallback
-            src={getImage("logo") || "/placeholder.svg"}
-            fallbackSrc="/placeholder.svg?height=250&width=250"
-            alt="Logo Web"
-            className="w-[250px]"
-          />
+          <div className="w-[250px] h-[250px] flex items-center justify-center">
+            <img
+              src={getImage("logo") || "/placeholder.svg?height=250&width=250"}
+              alt="Logo Web"
+              className="w-auto h-auto max-w-full max-h-full object-contain"
+              style={{ backgroundColor: "transparent" }}
+            />
+          </div>
           <h1 className="text-2xl text-[var(--varCol03)] mt-2" ref={titleRef}>
             Breathe Smell Relax
           </h1>
@@ -53,12 +54,14 @@ export default function Navbar() {
           {/* Logo pequeño y título - aparece cuando el título principal no es visible */}
           {!titleVisible && (
             <div className="flex items-center mr-4">
-              <ImageWithFallback
-                src={getImage("logoSmall") || "/placeholder.svg"}
-                fallbackSrc="/placeholder.svg?height=30&width=30"
-                alt="Logo Web"
-                className="w-[30px]"
-              />
+              <div className="w-[30px] h-[30px] flex items-center justify-center">
+                <img
+                  src={getImage("logoSmall") || "/placeholder.svg?height=30&width=30"}
+                  alt="Logo Web"
+                  className="w-auto h-auto max-w-full max-h-full object-contain"
+                  style={{ backgroundColor: "transparent" }}
+                />
+              </div>
               <p className="ml-3 font-semibold text-[var(--varCol03)] whitespace-nowrap">Breathe Smell Relax</p>
             </div>
           )}
