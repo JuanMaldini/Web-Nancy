@@ -3,7 +3,7 @@ import { getImage } from "../../../lib/utils"
 
 export default function Description() {
   return (
-    <div className="my-20 relative bg-[var(--varColWhite3)]">
+    <div className=" relative bg-[var(--varColWhite3)]">
       {/* Imagen de fondo con blur - mejorada */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <img
@@ -20,7 +20,7 @@ export default function Description() {
         <div className="absolute inset-0 bg-white/40 backdrop-blur-sm z-[1]"></div>
       </div>
 
-      <div className="min-h-[650px] md:min-h-[550px] lg:min-h-[600px] p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative justify-center items-center gap-0 overflow-hidden z-[2]">
+      <div className="py-20 min-h-[650px] md:min-h-[550px] lg:min-h-[600px] p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative justify-center items-center gap-0 overflow-hidden z-[2]">
         {/* Columna 1 - Imagen - static version */}
         <div className="rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl lg:rounded-r-none bg-white/80 backdrop-blur-md flex-1 h-full flex justify-center items-center p-8 shadow-lg">
           <img
