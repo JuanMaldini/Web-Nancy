@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import Carousel from "../../ui/Carousel"
+import Carousel from "@/components/ui/Carousel"
 import type { ProductProps } from "@/lib/types"
 
 export default function Product({

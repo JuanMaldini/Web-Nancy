@@ -7,7 +7,7 @@ import { FaWhatsapp } from "react-icons/fa"
 import { IoClose } from "react-icons/io5"
 import ModalGallery from "./ModalGallery"
 import ModalVideo from "./ModalVideo"
-import Carousel from "../ui/Carousel"
+import Carousel from "@/components/ui/Carousel"
 import { getWhatsappContactTaller, isVideo } from "@/lib/utils"
 import type { ModalTallerProps } from "@/lib/types"
 

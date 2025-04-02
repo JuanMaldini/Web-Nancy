@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import { FaWhatsapp } from "react-icons/fa"
 import { IoClose } from "react-icons/io5"
 import ModalGallery from "./ModalGallery"
-import Carousel from "../ui/Carousel"
+import Carousel from "@/components/ui/Carousel"
 import { getWhatsappContactProduct } from "@/lib/utils"
 import type { ModalProductProps } from "@/lib/types"
 
