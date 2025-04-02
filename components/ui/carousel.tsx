@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useCallback, useRef } from "react"
 import { ChevronLeft, ChevronRight, Play } from "lucide-react"
-import type { CarouselProps } from "@/lib/types"
-import ImageWithFallback from "@/components/ui/ImageWithFallback"
-import { isVideo } from "@/lib/utils"
+import type { CarouselProps } from "../../lib/types"
+import ImageWithFallback from "./ImageWithFallback"
+import { isVideo } from "../../lib/utils"
 
 export default function Carousel({
   images,

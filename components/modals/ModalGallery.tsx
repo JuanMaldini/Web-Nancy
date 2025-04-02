@@ -6,9 +6,9 @@ import { useState, useEffect, useRef } from "react"
 import { IoClose } from "react-icons/io5"
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import { Play, Pause } from "lucide-react"
-import type { ModalGalleryProps } from "@/lib/types"
-import ImageWithFallback from "@/components/ui/ImageWithFallback"
-import { isVideo } from "@/lib/utils"
+import type { ModalGalleryProps } from "../../lib/types"
+import ImageWithFallback from "../ui/ImageWithFallback"
+import { isVideo } from "../../lib/utils"
 
 const ModalGallery = ({ image, images, videos = [], initialIndex = 0, onClose }: ModalGalleryProps) => {
   // Combinar imágenes y videos

@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import { FaWhatsapp } from "react-icons/fa"
-import Carousel from "@/components/ui/Carousel"
-import { getWhatsappContactTaller } from "@/lib/utils"
-import type { TallerProp } from "@/lib/types"
+import Carousel from "../../ui/Carousel"
+import { getWhatsappContactTaller } from "../../../lib/utils"
+import type { TallerProp } from "../../../lib/types"
 
 export default function CardTaller({
   label,
