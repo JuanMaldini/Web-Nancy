@@ -46,3 +46,6 @@ coverage/
 
 # Archivos de configuraciones locales
 *.local
+
+.next/
+
