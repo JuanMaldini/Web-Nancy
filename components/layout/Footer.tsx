@@ -5,7 +5,7 @@ import type React from "react"
 import { FaInstagram, FaWhatsapp, FaHeart } from "react-icons/fa"
 import { LuPhone } from "react-icons/lu"
 import { FaLocationDot } from "react-icons/fa6"
-import { getPhoneContact, getWhatsappContact, InstagramLink } from "@/lib/utils"
+import { getPhoneContact, getWhatsappContact, InstagramLink } from "../../lib/utils"
 
 export default function Footer() {
   // Función para manejar clics en enlaces con desplazamiento suave

@@ -1,5 +1,5 @@
-import { descriptionText1, descriptionText2, descriptionText3 } from "@/lib/helpers"
-import { getImage } from "@/lib/utils"
+import { descriptionText1, descriptionText2, descriptionText3 } from "../../../lib/helpers"
+import { getImage } from "../../../lib/utils"
 
 export default function Description() {
   return (

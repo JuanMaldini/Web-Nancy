@@ -1,9 +1,9 @@
 import type React from "react"
-import "@/styles/globals.css"
+import "../styles/globals.css"
 import type { Metadata } from "next"
 
 // Importar el componente SmoothScroll
-import SmoothScroll from "@/components/ui/SmoothScroll"
+import SmoothScroll from "../components/ui/SmoothScroll"
 
 export const metadata: Metadata = {
   title: "Nancy Web",
