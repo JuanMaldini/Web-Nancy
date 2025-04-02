@@ -7,7 +7,7 @@ export const imageMap: Record<string, string> = {
   logoSmall: "/Icons/Logo/Corazon.png",
 
   // Imágenes de descripción
-  nancyProfile: "/Fotos/profile.jpg",
+  nancyProfile: "/Fotos/Profile.jpg",
   workSample: "/Fotos/Mate/IMG-20241121-WA0022.jpg",
   backgroundDescription: "/images/background-description.jpg",
 
