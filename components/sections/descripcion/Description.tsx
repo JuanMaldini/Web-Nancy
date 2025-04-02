@@ -4,16 +4,23 @@ import { getImage } from "../../../lib/utils"
 export default function Description() {
   return (
     <div className="my-20 relative bg-[var(--varColWhite3)]">
-      <div className="min-h-[650px] md:min-h-[550px] lg:min-h-[600px] p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative justify-center items-center gap-0 overflow-hidden">
-        {/* Imagen de fondo con blur - static version */}
-        <div className="absolute w-full h-full -z-10">
-          <img
-            src={getImage("backgroundDescription") || "/placeholder.svg?height=800&width=1200"}
-            alt=""
-            className="w-full h-full object-cover blur-xl scale-110"
-          />
-        </div>
+      {/* Imagen de fondo con blur - mejorada */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <img
+          src={getImage("backgroundDescription") || "/placeholder.svg?height=800&width=1200"}
+          alt=""
+          className="w-full h-full object-cover opacity-60 blur-[8px] scale-110 transform"
+          style={{
+            position: "absolute",
+            zIndex: 0,
+            objectPosition: "center",
+          }}
+        />
+        {/* Overlay para mejorar la visibilidad del contenido */}
+        <div className="absolute inset-0 bg-white/40 backdrop-blur-sm z-[1]"></div>
+      </div>
 
+      <div className="min-h-[650px] md:min-h-[550px] lg:min-h-[600px] p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative justify-center items-center gap-0 overflow-hidden z-[2]">
         {/* Columna 1 - Imagen - static version */}
         <div className="rounded-t-3xl md:rounded-tr-none md:rounded-l-3xl lg:rounded-r-none bg-white/80 backdrop-blur-md flex-1 h-full flex justify-center items-center p-8 shadow-lg">
           <img

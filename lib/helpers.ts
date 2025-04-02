@@ -9,7 +9,7 @@ export const imageMap: Record<string, string> = {
   // Imágenes de descripción
   nancyProfile: "/Fotos/Profile.jpg",
   workSample: "/Fotos/Mate/IMG-20241121-WA0022.jpg",
-  backgroundDescription: "/images/background-description.jpg",
+  backgroundDescription: "/Fotos/Galeria/IMG-20241121-WA0036.jpg",
 
   // Imagen de contacto
   contactLogo: "/images/contact-logo.jpg",
