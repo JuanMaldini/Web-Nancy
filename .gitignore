@@ -1,1 +1,48 @@
-node_modules
+# Dependencias de Node.js
+node_modules/
+.npm/
+.pnpm/
+
+# Archivos de logs y depuración
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Archivos de compilación y caché
+.next/
+out/
+dist/
+build/
+.cache/
+.vscode/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuración del entorno
+.env*
+!.env.example
+
+# Archivos de lock y paquetes específicos
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Archivos de cobertura de pruebas
+coverage/
+.nyc_output/
+
+# Configuración de editores
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Archivos de historia de Git
+.git/
+
+# Archivos de configuraciones locales
+*.local
