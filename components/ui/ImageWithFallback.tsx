@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { ImageWithFallbackProps } from "@/lib/types"
+import type { ImageWithFallbackProps } from "../../lib/types"
 
 export default function ImageWithFallback({
   src,
